@@ -1,49 +1,43 @@
-import type { Metadata } from "next";
-import { Monitor, BookOpen, Wrench, ArrowRight } from "lucide-react";
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
+import { Wrench, BookOpen, Globe } from "lucide-react";
 import { PageHeader } from "@/components/ui";
 
-export const metadata: Metadata = {
-  title: "Recommendations",
-  description:
-    "Tools, books, and resources recommended by Muntasir Mahdi.",
-};
+const tabs = [
+  { id: "tools", label: "Tools I Use" },
+  { id: "books", label: "Recommended Books" },
+  { id: "services", label: "Services" },
+];
 
-const categories = [
+const tools = [
+  { name: "OpenCode", description: "AI coding assistant I use daily" },
+  { name: "Claude Code", description: "for complex reasoning tasks" },
+  { name: "Hermes Agents", description: "for automated workflows" },
+  { name: "Next.js", description: "framework for this website" },
+  { name: "Tailwind CSS", description: "utility-first styling" },
+];
+
+const books = [
+  { title: "Thinking, Fast and Slow", author: "Daniel Kahneman" },
+  { title: "Atomic Habits", author: "James Clear" },
+  { title: "Sapiens", author: "Yuval Noah Harari" },
   {
-    icon: Monitor,
-    title: "Tools I Use",
-    items: [
-      "OpenCode — AI coding assistant I use daily",
-      "Claude Code — for complex reasoning tasks",
-      "Hermes Agents — for automated workflows",
-      "Next.js — framework for this website",
-      "Tailwind CSS — utility-first styling",
-    ],
-  },
-  {
-    icon: BookOpen,
-    title: "Recommended Reading",
-    items: [
-      "Thinking, Fast and Slow — Daniel Kahneman",
-      "Atomic Habits — James Clear",
-      "Sapiens — Yuval Noah Harari",
-      "The Almanack of Naval Ravikant — Eric Jorgenson",
-    ],
-  },
-  {
-    icon: Wrench,
-    title: "Services",
-    items: [
-      "Vercel — hosting and deployment",
-      "Cloudflare — CDN and security",
-      "Brevo — email marketing",
-      "GitHub — version control",
-    ],
+    title: "The Almanack of Naval Ravikant",
+    author: "Eric Jorgenson",
   },
 ];
 
+const services = [
+  { name: "Vercel", description: "hosting and deployment" },
+  { name: "Cloudflare", description: "CDN and security" },
+  { name: "Brevo", description: "email marketing" },
+  { name: "GitHub", description: "version control" },
+];
+
 export default function RecommendationsPage() {
+  const [activeTab, setActiveTab] = useState("tools");
+
   return (
     <>
       <PageHeader
@@ -53,32 +47,88 @@ export default function RecommendationsPage() {
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="max-w-3xl space-y-10">
-            {categories.map((category) => {
-              const Icon = category.icon;
-              return (
-                <div key={category.title}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <Icon size={20} className="text-accent" />
-                    <h2 className="text-lg font-semibold text-foreground">
-                      {category.title}
-                    </h2>
-                  </div>
-                  <ul className="space-y-2">
-                    {category.items.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-sm text-muted"
-                      >
-                        <span className="text-accent mt-0.5 shrink-0">&bull;</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              );
-            })}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={
+                  activeTab === tab.id
+                    ? "rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-foreground"
+                    : "rounded-lg border border-border bg-card px-4 py-2 text-sm text-muted hover:text-foreground"
+                }
+              >
+                {tab.label}
+              </button>
+            ))}
           </div>
+
+          {activeTab === "tools" && (
+            <div className="grid gap-4 sm:grid-cols-2">
+              {tools.map((tool) => (
+                <div
+                  key={tool.name}
+                  className="rounded-lg border border-border bg-card p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <Wrench size={18} className="text-accent shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-foreground">
+                        {tool.name}
+                      </h3>
+                      <p className="text-sm text-muted mt-1">
+                        {tool.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "books" && (
+            <div className="space-y-3">
+              {books.map((book) => (
+                <div
+                  key={book.title}
+                  className="rounded-lg border border-border bg-card p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <BookOpen size={18} className="text-accent shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-foreground">
+                        {book.title}
+                      </h3>
+                      <p className="text-sm text-muted mt-1">{book.author}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === "services" && (
+            <div className="space-y-3">
+              {services.map((service) => (
+                <div
+                  key={service.name}
+                  className="rounded-lg border border-border bg-card p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <Globe size={18} className="text-accent shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-foreground">
+                        {service.name}
+                      </h3>
+                      <p className="text-sm text-muted mt-1">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>

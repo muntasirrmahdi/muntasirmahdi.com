@@ -83,6 +83,8 @@ const books = [
 ];
 
 export default function BooksPage() {
+  const [featured, ...otherBooks] = books;
+
   return (
     <>
       <PageHeader
@@ -92,31 +94,75 @@ export default function BooksPage() {
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {books.map((book) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="w-full max-w-sm mx-auto md:mx-0 aspect-[3/4] rounded-md bg-background border border-border flex items-center justify-center">
+              <BookOpen size={48} className="text-muted-foreground" />
+            </div>
+
+            <div>
+              <p className="text-accent font-medium text-sm tracking-wide uppercase">
+                Featured Book
+              </p>
+              <h2 className="mt-2 text-2xl sm:text-3xl font-mono font-semibold text-foreground leading-tight">
+                {featured.title}
+              </h2>
+              <p className="mt-4 text-sm text-muted leading-relaxed">
+                {featured.description}
+              </p>
+              <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
+                <span>{featured.pages} pages</span>
+                <span className="w-1 h-1 rounded-full bg-border" />
+                <span>{featured.lang}</span>
+              </div>
+              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity">
+                Learn More
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+          <div className="mb-10">
+            <h2 className="text-xl font-mono font-semibold text-foreground">
+              All Books
+            </h2>
+            <p className="mt-2 text-sm text-muted">
+              Explore the full collection of books by Muntasir Mahdi.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {otherBooks.map((book) => (
               <div
                 key={book.title}
-                className="rounded-lg border border-border bg-card p-5 flex flex-col"
+                className="rounded-lg border border-border bg-card p-5 flex gap-5"
               >
-                <div className="w-full aspect-[3/4] rounded-md bg-background flex items-center justify-center mb-4 border border-border">
-                  <BookOpen size={36} className="text-muted-foreground" />
+                <div className="w-24 shrink-0 aspect-[3/4] rounded-md bg-background border border-border flex items-center justify-center">
+                  <BookOpen size={24} className="text-muted-foreground" />
                 </div>
-                <h3 className="font-semibold text-foreground text-sm leading-relaxed">
-                  {book.title}
-                </h3>
-                <p className="mt-1.5 text-xs text-muted leading-relaxed flex-1 line-clamp-3">
-                  {book.description}
-                </p>
-                <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
-                  <span>{book.pages} pages</span>
-                  <span className="w-1 h-1 rounded-full bg-border" />
-                  <span>{book.lang}</span>
+
+                <div className="flex flex-col min-w-0">
+                  <h3 className="font-semibold text-foreground text-sm leading-relaxed">
+                    {book.title}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-muted leading-relaxed flex-1 line-clamp-3">
+                    {book.description}
+                  </p>
+                  <div className="mt-2 flex items-center gap-2 text-xs text-muted-foreground">
+                    <span>{book.pages} pages</span>
+                    <span className="w-1 h-1 rounded-full bg-border" />
+                    <span>{book.lang}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">

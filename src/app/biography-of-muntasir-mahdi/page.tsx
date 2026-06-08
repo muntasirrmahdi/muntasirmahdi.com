@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
-import { ArrowRight, BookOpen, GraduationCap, Cpu } from "lucide-react";
-import Link from "next/link";
+import {
+  BookOpen,
+  GraduationCap,
+  Mic,
+  Briefcase,
+  Heart,
+  PenLine,
+  Cpu,
+  Bookmark,
+  Users,
+  Star,
+} from "lucide-react";
 import { PageHeader } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -8,6 +18,13 @@ export const metadata: Metadata = {
   description:
     "Muntasir Mahdi is an author and educator from Bangladesh. He writes about clear thinking, better learning, and building systems.",
 };
+
+const highlights = [
+  "Author of 10+ books on marketing, sales, and digital skills",
+  "Mentored 30,000+ people over 7+ years",
+  "Creator of Learn with Muntasir \u2014 a platform for practical digital skills",
+  "Co-host of the Mahdi & Mamun Podcast",
+];
 
 const topics = [
   {
@@ -30,6 +47,54 @@ const topics = [
   },
 ];
 
+const achievements = [
+  {
+    icon: BookOpen,
+    title: "Author",
+    items: [
+      "10+ books published on marketing, sales, copywriting, and digital skills",
+      "Writes in English for a global audience of entrepreneurs and knowledge workers",
+      "Books bridge the gap between academic theory and real-world business execution",
+    ],
+  },
+  {
+    icon: GraduationCap,
+    title: "Creator & Educator",
+    items: [
+      "Founder of Learn with Muntasir \u2014 a platform teaching practical digital skills",
+      "Runs the Banglay Solopreneurship newsletter with actionable business insights",
+      "30,000+ students mentored through courses, communities, and content",
+    ],
+  },
+  {
+    icon: Mic,
+    title: "Speaker",
+    items: [
+      "Co-host of the Mahdi & Mamun Podcast discussing solopreneurship and marketing",
+      "Speaks on digital business, learning systems, and the Bangladesh startup landscape",
+      "Regular content creator across YouTube, blog, and social media platforms",
+    ],
+  },
+  {
+    icon: Briefcase,
+    title: "Background",
+    items: [
+      "Born in 1997 in Sylhet, Bangladesh \u2014 raised with a passion for ideas and education",
+      "Deep background in marketing, copywriting, and digital business strategy",
+      "7+ years of experience building audiences, products, and communities online",
+    ],
+  },
+];
+
+const interests = [
+  { icon: Star, title: "Digital Marketing" },
+  { icon: Heart, title: "Psychology" },
+  { icon: PenLine, title: "Content Creation" },
+  { icon: Cpu, title: "AI Tools" },
+  { icon: Bookmark, title: "Reading" },
+  { icon: Users, title: "Teaching & Mentoring" },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -38,57 +103,53 @@ export default function AboutPage() {
         description="Author, educator, and solopreneur from Sylhet, Bangladesh."
       />
 
+      {/* Hero / Intro */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div className="md:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+            <div className="md:col-span-2">
               <div className="aspect-[3/4] rounded-lg border border-border bg-card flex items-center justify-center">
                 <span className="text-muted-foreground text-sm">Photo</span>
               </div>
             </div>
-            <div className="md:col-span-2">
-              <h2 className="text-xl font-mono font-semibold text-foreground mb-4">
-                Biography
+            <div className="md:col-span-3 flex flex-col justify-center">
+              <h2 className="text-2xl sm:text-3xl font-mono font-semibold text-foreground mb-4">
+                Hi, I&apos;m Muntasir Mahdi.
               </h2>
-              <div className="space-y-4 text-sm text-muted leading-relaxed">
-                <p>
-                  Muntasir Mahdi was born in 1997 in Sylhet, Bangladesh. He is an
-                  author of 10+ books on marketing, sales, copywriting, and
-                  digital skills. His work has helped thousands of people in
-                  Bangladesh learn how to build online businesses.
-                </p>
-                <p>
-                  For nearly 7 years, he has mentored 30,000+ people through his
-                  books, articles, courses, and communities. He runs{" "}
-                  <strong className="text-foreground">Learn with Muntasir</strong>,
-                  a platform dedicated to teaching practical digital skills that
-                  bridge the gap between school and work.
-                </p>
-                <p>
-                  He also co-hosts the{" "}
-                  <strong className="text-foreground">
-                    Mahdi & Mamun Podcast
-                  </strong>
-                  , where he discusses solopreneurship, marketing, and the
-                  business landscape in Bangladesh.
-                </p>
-                <p>
-                  Muntasir believes better thinking builds better lives, and
-                  better learning builds better futures. He writes in English
-                  about clear thinking, learning systems, and building digital
-                  assets.
-                </p>
-              </div>
+              <p className="text-sm text-muted leading-relaxed mb-6">
+                I was born in 1997 in Sylhet, Bangladesh. Over the last 7+
+                years, I have written 10+ books and mentored more than 30,000
+                people through my content, courses, and communities. I believe
+                better thinking builds better lives, and better learning builds
+                better futures.
+              </p>
+              <ul className="space-y-3">
+                {highlights.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    <span className="text-muted">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Philosophy: What I Write About */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <h2 className="text-2xl font-mono font-semibold text-foreground mb-10">
-            What I Write About
-          </h2>
+          <div className="max-w-3xl mb-12">
+            <h2 className="text-2xl font-mono font-semibold text-foreground mb-4">
+              What I Write About
+            </h2>
+            <p className="text-sm text-muted leading-relaxed">
+              I write for the person who wants to build a better life through
+              clearer thinking, smarter learning, and practical systems. My work
+              sits at the intersection of psychology, technology, and education
+              \u2014 because real progress happens when all three come together.
+            </p>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {topics.map((topic) => {
               const Icon = topic.icon;
@@ -113,24 +174,70 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Achievements */}
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <h2 className="text-2xl font-mono font-semibold text-foreground mb-6">
-            Learn with Muntasir
+          <h2 className="text-2xl font-mono font-semibold text-foreground mb-10">
+            Achievements
           </h2>
-          <p className="text-sm text-muted leading-relaxed max-w-2xl mb-8">
-            A platform dedicated to teaching practical digital skills --
-            marketing, copywriting, freelancing, and solopreneurship. Courses
-            designed to close the gap between what school teaches and what the
-            market needs.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
-          >
-            Get in Touch
-            <ArrowRight size={16} />
-          </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {achievements.map((block) => {
+              const Icon = block.icon;
+              return (
+                <div
+                  key={block.title}
+                  className="rounded-lg border border-border bg-card p-6"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="rounded-full bg-accent/10 p-2 inline-flex">
+                      <Icon size={18} className="text-accent" />
+                    </div>
+                    <h3 className="font-semibold text-foreground">
+                      {block.title}
+                    </h3>
+                  </div>
+                  <ul className="space-y-2">
+                    {block.items.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-2 text-sm text-muted"
+                      >
+                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Interests */}
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+          <h2 className="text-2xl font-mono font-semibold text-foreground mb-10">
+            Interests
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {interests.map((interest) => {
+              const Icon = interest.icon;
+              return (
+                <div
+                  key={interest.title}
+                  className="rounded-lg border border-border bg-card p-5 flex items-center gap-3"
+                >
+                  <div className="rounded-full bg-accent/10 p-2 inline-flex shrink-0">
+                    <Icon size={16} className="text-accent" />
+                  </div>
+                  <span className="text-sm text-foreground font-medium">
+                    {interest.title}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </>
