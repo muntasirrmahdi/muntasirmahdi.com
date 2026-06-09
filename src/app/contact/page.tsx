@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { MessageSquare, Mail, Mic, Handshake, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { PageHeader } from "@/components/ui";
+import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact Me",
@@ -186,6 +187,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <ContactForm />
 
       {/* Closing */}
       <section className="border-t border-border">

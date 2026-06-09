@@ -7,10 +7,10 @@
   --card-foreground: #fafafa;
   --muted: #a1a1aa;
   --muted-foreground: #71717a;
-  --accent: #f59e0b;
+  --accent: #c9a233;
   --accent-foreground: #09090b;
   --border: #27272a;
-  --ring: #f59e0b;
+  --ring: #c9a233;
 }
 
 @theme inline {

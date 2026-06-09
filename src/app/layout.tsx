@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Header, Footer } from "@/components/layout";
+import { NewsletterForm } from "@/components/NewsletterForm";
 import "./globals.css";
 
 const inter = Inter({
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
+        <NewsletterForm />
         <Footer />
       </body>
     </html>
