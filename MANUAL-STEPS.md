@@ -29,7 +29,7 @@ When you publish content in Sanity, you want the site to auto-rebuild. Set up a 
 4. Click **Create webhook**
 5. Fill in:
    - **Name**: `Cloudflare Pages Deploy`
-   - **URL**: `https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/51d2c0a2-49f3-4fb4-b83f-3032c3f327ac`
+   - **URL**: `<YOUR_DEPLOY_HOOK_URL>` (from Cloudflare Dashboard > Pages > muntasirmahdi > Settings > Deploy Hooks)
    - **Trigger**: On create, update, delete (or whichever events you want)
    - **HTTP Method**: POST
    - Leave headers/body as default
