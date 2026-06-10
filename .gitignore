@@ -40,9 +40,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# project docs (plans, research, etc)
+# project docs (plans, research, manuals, etc)
 plans/
 research/
+MANUAL-STEPS.md
 
 # opennext / cloudflare
 .open-next/
