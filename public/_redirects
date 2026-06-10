@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects
+# Format: <source> <destination> <status>
+
+# Old WordPress paths that may still get traffic
+/wp-admin/*  https://muntasirmahdi.com/  301
+/wp-login*   https://muntasirmahdi.com/  301
+/xmlrpc.php  https://muntasirmahdi.com/  301
+/author/*    https://muntasirmahdi.com/  301
+/feed        https://muntasirmahdi.com/feed.xml  301
+/feed/       https://muntasirmahdi.com/feed.xml  301
