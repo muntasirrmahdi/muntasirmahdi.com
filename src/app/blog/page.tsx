@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import {
   sanityFetch,
   postsQuery,
+  categoriesQuery,
   type SanityPost,
+  type SanityCategory,
 } from "@/lib/sanity";
 import { BlogTabs } from "@/components/BlogTabs";
 import { NewsletterCard } from "@/components/NewsletterCard";
@@ -16,7 +18,7 @@ export const metadata: Metadata = {
 export const revalidate = 60;
 
 export default async function BlogPage() {
-  const [thoughts, articles] = await Promise.all([
+  const [thoughts, articles, categories] = await Promise.all([
     sanityFetch<SanityPost[]>({
       query: postsQuery,
       params: { postType: "thought" },
@@ -26,6 +28,10 @@ export default async function BlogPage() {
       query: postsQuery,
       params: { postType: "article" },
       tags: ["articles"],
+    }),
+    sanityFetch<SanityCategory[]>({
+      query: categoriesQuery,
+      tags: ["categories"],
     }),
   ]);
 
@@ -66,7 +72,7 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      <BlogTabs thoughts={thoughts} articles={articles} />
+      <BlogTabs thoughts={thoughts} articles={articles} categories={categories} />
     </>
   );
 }

@@ -1,11 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { Sun, Moon } from "lucide-react";
 import { footerLinks } from "@/lib/nav";
+import { useTheme } from "@/components/layout";
 
 export function Footer() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <footer className="border-t border-border">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12">
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 items-center">
           {footerLinks.map((item) => (
             <Link
               key={item.href}
@@ -15,10 +21,35 @@ export function Footer() {
               {item.label}
             </Link>
           ))}
+          <button
+            onClick={toggleTheme}
+            className="text-muted hover:text-foreground transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
+          </button>
         </nav>
 
         <div className="mt-8 pt-6 border-t border-border text-center text-xs text-muted tracking-wider">
-          &copy; {new Date().getFullYear()} MUNTASIR MAHDI
+          &copy; {new Date().getFullYear()} Muntasir Mahdi. Made by{" "}
+          <a
+            href="https://github.com/opencode-ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors underline underline-offset-2"
+          >
+            Opencode
+          </a>
+          {" & "}
+          <a
+            href="https://deepseek.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors underline underline-offset-2"
+          >
+            Deepseek
+          </a>
+          .
         </div>
       </div>
     </footer>

@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
-import type { SanityPost } from "@/lib/sanity";
+import type { SanityPost, SanityCategory } from "@/lib/sanity";
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString("en-US", {
@@ -57,22 +57,34 @@ function PostList({ posts, tab }: { posts: SanityPost[]; tab: string }) {
 interface BlogTabsProps {
   thoughts: SanityPost[];
   articles: SanityPost[];
+  categories: SanityCategory[];
 }
 
-export function BlogTabs({ thoughts, articles }: BlogTabsProps) {
+export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
   const [activeTab, setActiveTab] = useState<"thoughts" | "articles">(
     "thoughts"
   );
   const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(
+    null
+  );
+  const [visibleCount, setVisibleCount] = useState(10);
 
-  const filteredArticles = search.trim()
-    ? articles.filter(
-        (a) =>
-          a.title.toLowerCase().includes(search.toLowerCase()) ||
-          (a.excerpt &&
-            a.excerpt.toLowerCase().includes(search.toLowerCase()))
-      )
-    : articles;
+  useEffect(() => {
+    setVisibleCount(10);
+  }, [activeTab, selectedCategory]);
+
+  const filteredArticles = articles.filter((a) => {
+    const matchesSearch =
+      !search.trim() ||
+      a.title.toLowerCase().includes(search.toLowerCase()) ||
+      (a.excerpt &&
+        a.excerpt.toLowerCase().includes(search.toLowerCase()));
+    const matchesCategory =
+      !selectedCategory ||
+      (a.category && a.category.title === selectedCategory);
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <section>
@@ -118,6 +130,34 @@ export function BlogTabs({ thoughts, articles }: BlogTabsProps) {
           )}
         </div>
 
+        {activeTab === "articles" && (
+          <div className="flex flex-wrap items-center gap-2 mb-6">
+            <button
+              onClick={() => setSelectedCategory(null)}
+              className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
+                selectedCategory === null
+                  ? "bg-accent text-accent-foreground border-accent"
+                  : "border-border text-muted hover:text-foreground"
+              }`}
+            >
+              All
+            </button>
+            {categories.map((cat) => (
+              <button
+                key={cat._id}
+                onClick={() => setSelectedCategory(cat.title)}
+                className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
+                  selectedCategory === cat.title
+                    ? "bg-accent text-accent-foreground border-accent"
+                    : "border-border text-muted hover:text-foreground"
+                }`}
+              >
+                {cat.title}
+              </button>
+            ))}
+          </div>
+        )}
+
         <p className="text-xs text-muted-foreground mb-8">
           {activeTab === "thoughts"
             ? `${thoughts.length} thought${thoughts.length !== 1 ? "s" : ""}`
@@ -127,9 +167,26 @@ export function BlogTabs({ thoughts, articles }: BlogTabsProps) {
         </p>
 
         <PostList
-          posts={activeTab === "thoughts" ? thoughts : filteredArticles}
+          posts={
+            (activeTab === "thoughts" ? thoughts : filteredArticles).slice(
+              0,
+              visibleCount
+            )
+          }
           tab={activeTab}
         />
+
+        {visibleCount <
+          (activeTab === "thoughts" ? thoughts : filteredArticles).length && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 10)}
+              className="px-6 py-2.5 text-sm border border-border rounded-md text-muted hover:text-foreground hover:border-accent transition-colors"
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

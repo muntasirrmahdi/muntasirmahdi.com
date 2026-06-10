@@ -13,6 +13,19 @@
   --ring: #c9a233;
 }
 
+.light {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --muted: #71717a;
+  --muted-foreground: #a1a1aa;
+  --accent: #c9a233;
+  --accent-foreground: #09090b;
+  --border: #e4e4e7;
+  --ring: #c9a233;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

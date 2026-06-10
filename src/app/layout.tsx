@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { Header, Footer } from "@/components/layout";
+import { Header, Footer, ThemeProvider } from "@/components/layout";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import "./globals.css";
 
@@ -34,12 +34,20 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <NewsletterForm />
-        <Footer />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';if(t==='light')document.documentElement.classList.add('light');}catch(e){}})()`,
+          }}
+        />
+        <ThemeProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <NewsletterForm />
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
