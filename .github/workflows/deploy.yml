@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./site
+        working-directory: site
 
     steps:
       - name: Checkout code
