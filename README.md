@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# muntasirmahdi.com
+
+Personal website of Muntasir Mahdi — author, educator, solopreneur. Built with Next.js 16, Sanity CMS, and deployed on Cloudflare Workers.
+
+## Tech Stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 16 + React 19 + TypeScript |
+| Styling | Tailwind CSS 4 |
+| CMS | Sanity (blog posts, categories) |
+| Hosting | Cloudflare Workers via @opennextjs/cloudflare |
+| Fonts | JetBrains Mono, Inter, Noto Serif Bengali |
+| Email | Brevo REST API (contact + newsletter) |
+| Domain | Cloudflare DNS + Email Routing |
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` (if present) or set these in `.env.local`:
 
-## Learn More
+- `NEXT_PUBLIC_SANITY_PROJECT_ID`
+- `NEXT_PUBLIC_SANITY_DATASET`
+- `SANITY_API_TOKEN`
+- `BREVO_API_KEY`
+- `BREVO_NEWSLETTER_LIST_ID`
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID`
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Push to `main` auto-deploys via GitHub Actions:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git push origin main
+```
 
-## Deploy on Vercel
+The workflow runs:
+1. `npm ci`
+2. `npx @opennextjs/cloudflare build`
+3. `npx opennextjs-cloudflare deploy`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deploys to Cloudflare Workers global CDN (300+ edge nodes).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Key Features
+
+- Blog with Sanity CMS (Thoughts + Articles tabs, category filtering, search, pagination)
+- Books showcase with individual pages
+- Newsletter archive (78+ issues) with Brevo subscription
+- Dark/light theme with localStorage persistence
+- RSS feed (`/feed.xml`)
+- SEO metadata, JSON-LD structured data, dynamic sitemap
+- Contact form with multi-email routing
+- Maintenance mode middleware
+- Cookie consent banner
+- 301 redirects from old WordPress paths
+- 404 page
+
+## Project Structure
+
+```
+site/
+  src/
+    app/          # Next.js App Router pages and API routes
+    components/   # React components (Header, Footer, StickyBar, etc.)
+    lib/          # Utility functions, Sanity client, queries
+    data/         # Static data (newsletter issues)
+  public/         # Static assets, _redirects, _headers
+  sanity/         # Sanity Studio schema and config
+```
+
+## License
+
+All rights reserved. Content and design (c) Muntasir Mahdi.
