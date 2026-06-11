@@ -8,3 +8,7 @@
 /author/*    https://muntasirmahdi.com/  301
 /feed        https://muntasirmahdi.com/feed.xml  301
 /feed/       https://muntasirmahdi.com/feed.xml  301
+
+# Old WordPress paths that changed in rebuild
+/books       https://muntasirmahdi.com/books-by-muntasir-mahdi  301
+/bio         https://muntasirmahdi.com/biography-of-muntasir-mahdi  301
