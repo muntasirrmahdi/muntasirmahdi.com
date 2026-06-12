@@ -20,7 +20,7 @@ export default function NowPage() {
 
       <section className="border-t border-border">
         <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
-          <p className="text-sm text-muted leading-relaxed mb-2">
+          <p className="text-base text-muted leading-relaxed mb-2">
             (This is a{" "}
             <a
               href="https://nownownow.com"
@@ -41,7 +41,7 @@ export default function NowPage() {
               <h2 className="text-xl font-mono font-semibold text-foreground mb-4">
                 Writing & Creating
               </h2>
-              <div className="space-y-3 text-sm text-muted leading-relaxed">
+              <div className="space-y-3 text-base text-muted leading-relaxed">
                 <p>
                   I've been writing more consistently this year. Mostly about
                   mental tools, income systems, and how solopreneurs can use
@@ -71,7 +71,7 @@ export default function NowPage() {
               <h2 className="text-xl font-mono font-semibold text-foreground mb-4">
                 Building the Website
               </h2>
-              <div className="space-y-3 text-sm text-muted leading-relaxed">
+              <div className="space-y-3 text-base text-muted leading-relaxed">
                 <p>
                   This website — muntasirmahdi.com — is being rebuilt from
                   scratch with Next.js and Tailwind CSS. The old version worked,
@@ -94,7 +94,7 @@ export default function NowPage() {
               <h2 className="text-xl font-mono font-semibold text-foreground mb-4">
                 Teaching & Mentoring
               </h2>
-              <div className="space-y-3 text-sm text-muted leading-relaxed">
+              <div className="space-y-3 text-base text-muted leading-relaxed">
                 <p>
                   I run two communities: Inner Circle and Mastermind. Inner
                   Circle is the larger group — structured training on digital
@@ -124,7 +124,7 @@ export default function NowPage() {
               <h2 className="text-xl font-mono font-semibold text-foreground mb-4">
                 Reading & Learning
               </h2>
-              <div className="space-y-3 text-sm text-muted leading-relaxed">
+              <div className="space-y-3 text-base text-muted leading-relaxed">
                 <p>
                   I'm currently rereading Daniel Kahneman's Thinking, Fast and
                   Slow — but this time with a writer's eye, not a reader's.
@@ -149,7 +149,7 @@ export default function NowPage() {
               <h2 className="text-xl font-mono font-semibold text-foreground mb-4">
                 Podcast
               </h2>
-              <div className="space-y-3 text-sm text-muted leading-relaxed">
+              <div className="space-y-3 text-base text-muted leading-relaxed">
                 <p>
                   The Mahdi & Mamun Podcast is still going. Mamun and I record
                   whenever our schedules align — no fixed cadence, just real

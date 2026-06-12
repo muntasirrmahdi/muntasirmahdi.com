@@ -16,7 +16,7 @@ export function SectionHeader({ title, subtitle, accent }: SectionHeaderProps) {
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-1 text-sm text-muted">{subtitle}</p>
+        <p className="mt-1 text-base text-muted">{subtitle}</p>
       )}
     </div>
   );

@@ -26,7 +26,7 @@ function NavLink({
       >
         <button
           onClick={() => mobile && setOpen(!open)}
-            className={`flex items-center gap-1 font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
+            className={`flex items-center gap-1 font-mono text-lg text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
             mobile ? "min-h-[44px] py-2.5" : ""
           }`}
         >
@@ -51,7 +51,7 @@ function NavLink({
                 href={child.href || "#"}
                 target={child.external ? "_blank" : undefined}
                 rel={child.external ? "noopener noreferrer" : undefined}
-                className={`flex items-center gap-1.5 font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
+                className={`flex items-center gap-1.5 font-mono text-lg text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
                   mobile ? "py-2.5 min-h-[44px]" : "px-4 py-2"
                 }`}
                 onClick={onNavClick}
@@ -71,7 +71,7 @@ function NavLink({
       href={item.href || "#"}
       target={item.external ? "_blank" : undefined}
       rel={item.external ? "noopener noreferrer" : undefined}
-      className={`inline-flex items-center gap-1 font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
+      className={`inline-flex items-center gap-1 font-mono text-lg text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
         mobile ? "min-h-[44px] py-2.5" : ""
       }`}
       onClick={onNavClick}

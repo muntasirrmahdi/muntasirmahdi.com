@@ -160,7 +160,7 @@ export function ContactForm() {
           <h3 className="text-2xl sm:text-3xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-4">
             Message sent successfully!
           </h3>
-          <p className="text-sm text-muted">
+          <p className="text-base text-muted">
             Thank you for reaching out. I read every message personally and will get back to you as soon as possible.
           </p>
         </div>

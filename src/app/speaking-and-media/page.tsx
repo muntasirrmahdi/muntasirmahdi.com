@@ -48,7 +48,7 @@ export default function SpeakingPage() {
           <h2 className="text-lg font-semibold text-foreground mb-4">
             Organizations I Have Worked With
           </h2>
-          <p className="text-sm text-muted leading-relaxed">
+          <p className="text-base text-muted leading-relaxed">
             {clients.slice(0, -1).join(", ")}, and {clients.slice(-1)}.
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function SpeakingPage() {
                     <p className="text-xs text-muted-foreground font-mono mt-0.5">
                       {item.type} &middot; {item.frequency}
                     </p>
-                    <p className="text-sm text-muted leading-relaxed mt-2">
+                    <p className="text-base text-muted leading-relaxed mt-2">
                       {item.description}
                     </p>
                   </div>
@@ -114,7 +114,7 @@ export default function SpeakingPage() {
           <h2 className="text-lg font-semibold text-foreground mb-2">
             Interested in Having Me Speak at Your Event?
           </h2>
-          <p className="text-sm text-muted leading-relaxed mb-8">
+          <p className="text-base text-muted leading-relaxed mb-8">
             I welcome invitations to speak, teach, or run workshops. Here is how
             the process works.
           </p>
@@ -128,7 +128,7 @@ export default function SpeakingPage() {
                 <h3 className="text-sm font-semibold text-foreground">
                   Send an Email
                 </h3>
-                <p className="text-sm text-muted leading-relaxed mt-1">
+                <p className="text-base text-muted leading-relaxed mt-1">
                   Reach out to{" "}
                   <a
                     href="mailto:hello@muntasirmahdi.com"
@@ -149,7 +149,7 @@ export default function SpeakingPage() {
                 <h3 className="text-sm font-semibold text-foreground">
                   Share the Details
                 </h3>
-                <p className="text-sm text-muted leading-relaxed mt-1">
+                <p className="text-base text-muted leading-relaxed mt-1">
                   Tell me about your event — the date, format (in-person or
                   virtual), expected audience size, and what you hope attendees
                   will take away.
@@ -165,7 +165,7 @@ export default function SpeakingPage() {
                 <h3 className="text-sm font-semibold text-foreground">
                   Suggest Topics
                 </h3>
-                <p className="text-sm text-muted leading-relaxed mt-1">
+                <p className="text-base text-muted leading-relaxed mt-1">
                   Let me know which areas you would like covered — digital
                   marketing, solopreneurship, content strategy, or the
                   Bangladesh business landscape. I tailor every session to the
@@ -175,7 +175,7 @@ export default function SpeakingPage() {
             </div>
           </div>
 
-          <p className="mt-8 text-sm text-muted-foreground leading-relaxed border-t border-border pt-6">
+          <p className="mt-8 text-base text-muted-foreground leading-relaxed border-t border-border pt-6">
             I do my best to accommodate requests, but I prioritize events that
             align with my expertise.
           </p>
@@ -197,7 +197,7 @@ export default function SpeakingPage() {
           <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">
             Want to Stay in Touch?
           </h2>
-          <p className="text-sm text-muted leading-relaxed">
+          <p className="text-base text-muted leading-relaxed">
             Join the Inner Circle newsletter for practical insights on digital
             marketing, solopreneurship, and building a business that lasts.
           </p>

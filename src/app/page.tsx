@@ -163,13 +163,13 @@ export default function Home() {
               <h2 className="text-2xl font-mono font-semibold text-foreground mb-4">
                 Hi, I'm Muntasir
               </h2>
-              <p className="text-sm text-muted leading-relaxed mb-4">
+              <p className="text-base text-muted leading-relaxed mb-4">
                 For nearly 7 years, I've mentored 30,000+ people on how to make
                 money online and become solopreneurs through my books, articles,
                 and courses. I write about mental tools, income systems, and
                 applied AI.
               </p>
-              <p className="text-sm text-muted leading-relaxed mb-6">
+              <p className="text-base text-muted leading-relaxed mb-6">
                 I believe better thinking builds better lives, and better
                 learning builds better futures. I care about how people think,
                 learn, and build in Bangladesh. This is where I think in public.
@@ -259,7 +259,7 @@ export default function Home() {
               <h2 className="text-2xl font-mono font-semibold text-foreground mb-4">
                 Get actionable insights every week
               </h2>
-              <p className="text-sm text-muted leading-relaxed mb-6">
+              <p className="text-base text-muted leading-relaxed mb-6">
                 Join 77+ subscribers who get my weekly newsletter on
                 solopreneurship, mental tools, and digital skills. No spam.
                 Unsubscribe anytime.
@@ -270,7 +270,7 @@ export default function Home() {
                     size={18}
                     className="text-accent shrink-0 mt-0.5"
                   />
-                  <span className="text-sm text-muted">
+                  <span className="text-base text-muted">
                     Practical frameworks for mental tools and income
                     systems
                   </span>
@@ -280,7 +280,7 @@ export default function Home() {
                     size={18}
                     className="text-accent shrink-0 mt-0.5"
                   />
-                  <span className="text-sm text-muted">
+                  <span className="text-base text-muted">
                     Actionable strategies for building digital assets and
                     solopreneurship
                   </span>
@@ -290,7 +290,7 @@ export default function Home() {
                     size={18}
                     className="text-accent shrink-0 mt-0.5"
                   />
-                  <span className="text-sm text-muted">
+                  <span className="text-base text-muted">
                     Marketing and sales tactics that work specifically in
                     Bangladesh
                   </span>
@@ -305,7 +305,7 @@ export default function Home() {
               <h3 className="text-lg font-mono font-semibold text-foreground mb-2">
                 Banglay Solopreneurship
               </h3>
-              <p className="text-sm text-muted leading-relaxed mb-6">
+              <p className="text-base text-muted leading-relaxed mb-6">
                 One actionable insight delivered to your inbox every week.
               </p>
               <Link
@@ -385,7 +385,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-semibold text-foreground">Inner Circle</h3>
               </div>
-              <p className="text-sm text-muted leading-relaxed">
+              <p className="text-base text-muted leading-relaxed">
                 By joining the Inner Circle, you can access everything from
                 Learn with Muntasir for free.
               </p>
@@ -398,7 +398,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-semibold text-foreground">Mastermind</h3>
               </div>
-              <p className="text-sm text-muted leading-relaxed">
+              <p className="text-base text-muted leading-relaxed">
                 By joining the Mastermind, you can network with positive-minded
                 people and get 1-1 live support for life.
               </p>

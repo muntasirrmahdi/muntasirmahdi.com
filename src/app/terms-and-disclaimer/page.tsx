@@ -20,7 +20,7 @@ export default function TermsPage() {
 
       <section className="border-t border-border">
         <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
-          <div className="space-y-10 text-sm text-muted leading-relaxed">
+          <div className="space-y-10 text-base text-muted leading-relaxed">
             <div>
               <h2 className="text-lg font-semibold text-foreground mb-3">
                 Overview

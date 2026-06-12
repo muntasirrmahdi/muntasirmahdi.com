@@ -142,7 +142,7 @@ export default function BooksPage() {
               <h2 className="mt-2 text-2xl sm:text-3xl font-mono font-semibold text-foreground leading-tight">
                 {featured.title}
               </h2>
-              <p className="mt-4 text-sm text-muted leading-relaxed">
+              <p className="mt-4 text-base text-muted leading-relaxed">
                 {featured.description}
               </p>
               <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
@@ -176,7 +176,7 @@ export default function BooksPage() {
             <h2 className="text-xl font-mono font-semibold text-foreground">
               All Books
             </h2>
-            <p className="mt-2 text-sm text-muted">
+            <p className="mt-2 text-base text-muted">
               Explore the full collection of books by Muntasir Mahdi.
             </p>
           </div>
@@ -238,7 +238,7 @@ export default function BooksPage() {
             <h2 className="text-xl font-mono font-semibold text-foreground mb-3">
               Get My Books
             </h2>
-            <p className="text-sm text-muted leading-relaxed">
+            <p className="text-base text-muted leading-relaxed">
               All my books are available at bookstores across Bangladesh. Some
               titles are also available as ebooks.
             </p>

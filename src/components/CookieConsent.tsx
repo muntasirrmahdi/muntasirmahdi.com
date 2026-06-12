@@ -53,7 +53,7 @@ export function CookieConsent() {
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-sm shadow-[0_-2px_10px_rgba(0,0,0,0.08)]">
         <div className="w-full px-4 sm:px-6 py-4 sm:py-3">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-            <p className="text-sm text-muted leading-relaxed flex-1">
+            <p className="text-base text-muted leading-relaxed flex-1">
               We use cookies to improve your experience on muntasirmahdi.com. By
               accepting, you allow analytics and personalization. You can manage
               preferences or reject non-essential cookies.

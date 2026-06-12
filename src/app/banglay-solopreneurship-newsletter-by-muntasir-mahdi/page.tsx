@@ -133,12 +133,12 @@ export default function NewsletterPage() {
               <h2 className="text-xl sm:text-2xl font-mono font-semibold text-foreground leading-snug">
                 Banglay Solopreneurship
                 </h2>
-                <p className="italic text-sm text-muted leading-relaxed border-l-2 border-accent/50 pl-4">
+                <p className="italic text-base text-muted leading-relaxed border-l-2 border-accent/50 pl-4">
                   Practical insights on building a solo business — marketing
                   strategy, digital tools, mindset shifts, and real experience
                   from the journey.
                 </p>
-                <p className="text-sm text-muted leading-relaxed">
+                <p className="text-base text-muted leading-relaxed">
                   Every week, Muntasir shares actionable lessons on
                   solopreneurship, content marketing, copywriting, client
                   hunting, and the systems that keep a one-person business

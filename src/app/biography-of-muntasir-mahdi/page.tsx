@@ -128,7 +128,7 @@ export default function AboutPage() {
               <h2 className="text-2xl sm:text-3xl font-mono font-semibold text-foreground mb-4">
                 Hi, I&apos;m Muntasir Mahdi.
               </h2>
-              <p className="text-sm text-muted leading-relaxed mb-6">
+              <p className="text-base text-muted leading-relaxed mb-6">
                 I was born in 1997 in Sylhet, Bangladesh. Over the last 7+
                 years, I have written 10+ books and mentored more than 30,000
                 people through my content, courses, and communities. I believe
@@ -155,7 +155,7 @@ export default function AboutPage() {
             <h2 className="text-2xl font-mono font-semibold text-foreground mb-4">
               What I Write About
             </h2>
-            <p className="text-sm text-muted leading-relaxed">
+            <p className="text-base text-muted leading-relaxed">
               I write for the person who wants to build a better life through
               mental tools, income systems, and applied AI. My work
               sits at the intersection of psychology, technology, and education
@@ -176,7 +176,7 @@ export default function AboutPage() {
                   <h3 className="font-semibold text-foreground mb-2">
                     {topic.title}
                   </h3>
-                  <p className="text-sm text-muted leading-relaxed">
+                  <p className="text-base text-muted leading-relaxed">
                     {topic.description}
                   </p>
                 </div>

@@ -85,7 +85,7 @@ export function NewsletterForm() {
       <section className="border-t border-border">
       <div className="w-full px-4 sm:px-6 py-12 sm:py-16">
         <div className="text-center">
-          <p className="text-sm text-muted mb-6">
+          <p className="text-base text-muted mb-6">
             Get notified about new articles, books, and resources.
           </p>
 

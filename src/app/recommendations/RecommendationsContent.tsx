@@ -70,7 +70,7 @@ export function RecommendationsContent() {
                       <h3 className="text-sm font-semibold text-foreground">
                         {tool.name}
                       </h3>
-                      <p className="text-sm text-muted mt-1">
+                      <p className="text-base text-muted mt-1">
                         {tool.description}
                       </p>
                     </div>
@@ -93,7 +93,7 @@ export function RecommendationsContent() {
                       <h3 className="text-sm font-semibold text-foreground">
                         {book.title}
                       </h3>
-                      <p className="text-sm text-muted mt-1">{book.author}</p>
+                      <p className="text-base text-muted mt-1">{book.author}</p>
                     </div>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export function RecommendationsContent() {
                       <h3 className="text-sm font-semibold text-foreground">
                         {service.name}
                       </h3>
-                      <p className="text-sm text-muted mt-1">
+                      <p className="text-base text-muted mt-1">
                         {service.description}
                       </p>
                     </div>

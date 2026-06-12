@@ -68,7 +68,7 @@ export function CookiePreferences({
           </button>
         </div>
 
-        <p className="text-sm text-muted mb-5 leading-relaxed">
+        <p className="text-base text-muted mb-5 leading-relaxed">
           Manage your cookie preferences below. Functional cookies are required
           for the site to work properly.
         </p>

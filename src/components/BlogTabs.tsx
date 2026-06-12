@@ -16,7 +16,7 @@ function formatDate(dateStr: string) {
 function PostList({ posts, tab }: { posts: SanityPost[]; tab: string }) {
   if (posts.length === 0) {
     return (
-      <p className="text-sm text-muted py-12 text-center">
+      <p className="text-base text-muted py-12 text-center">
         No {tab === "thoughts" ? "thoughts" : "articles"} yet. Check back soon.
       </p>
     );
@@ -36,7 +36,7 @@ function PostList({ posts, tab }: { posts: SanityPost[]; tab: string }) {
               </span>
             </div>
             {post.excerpt && (
-              <p className="mt-1.5 text-sm text-muted leading-relaxed line-clamp-2">
+              <p className="mt-1.5 text-base text-muted leading-relaxed line-clamp-2">
                 {post.excerpt}
               </p>
             )}

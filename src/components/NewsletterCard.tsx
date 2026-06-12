@@ -43,7 +43,7 @@ export function NewsletterCard() {
       <h3 className="text-sm font-semibold text-foreground mb-1">
         Join the conversation
       </h3>
-      <p className="text-sm text-muted mb-4">
+      <p className="text-base text-muted mb-4">
         No spam. Just the highest quality ideas.
       </p>
 
