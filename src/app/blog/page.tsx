@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Blogs & Thoughts | Muntasir Mahdi",
   description:
     "Articles on digital business, productivity, mental tools, income systems, AI, online business skills, and personal branding.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/blog",
+  },
 };
 
 export const revalidate = 60;

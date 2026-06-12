@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Contact Me",
   description:
     "Get in touch with Muntasir Mahdi — for advice, customer service, speaking, or partnerships.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/contact",
+  },
 };
 
 export default function ContactPage() {

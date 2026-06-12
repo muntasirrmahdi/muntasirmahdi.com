@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { navItems, type NavItem } from "@/lib/nav";
@@ -119,10 +120,13 @@ export function Header() {
 
       <div className="mx-auto flex min-h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center shrink-0">
-          <img
+          <Image
             src={isLight ? "/images/logo-black.png" : "/images/logo-white.png"}
             alt="Muntasir Mahdi"
+            width={400}
+            height={100}
             className="h-12 sm:h-[100px] w-auto transition-all"
+            priority
           />
         </Link>
 

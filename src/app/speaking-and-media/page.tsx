@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Speaking & Media",
   description:
     "Podcast appearances, speaking engagements, and media features by Muntasir Mahdi.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/speaking-and-media",
+  },
 };
 
 const clients = [

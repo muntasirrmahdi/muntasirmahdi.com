@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Terms & Disclaimer",
   description:
     "Privacy policy, terms of use, and earnings disclaimer for MuntasirMahdi.com.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/terms-and-disclaimer",
+  },
 };
 
 export default function TermsPage() {

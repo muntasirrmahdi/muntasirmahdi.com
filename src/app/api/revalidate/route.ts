@@ -12,12 +12,12 @@ export async function POST(request: NextRequest) {
 
   // Revalidate based on what changed
   if (postType === "post") {
-    revalidateTag("thoughts", { expire: 0 });
-    revalidateTag("articles", { expire: 0 });
+    revalidateTag("thoughts", "max");
+    revalidateTag("articles", "max");
   }
 
   // Always revalidate categories when anything changes
-  revalidateTag("categories", { expire: 0 });
+  revalidateTag("categories", "max");
 
   return NextResponse.json({ revalidated: true });
 }

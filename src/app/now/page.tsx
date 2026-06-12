@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "What I'm Doing Now",
   description:
     "What Muntasir Mahdi is currently focused on — projects, writing, and learning.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/now",
+  },
 };
 
 export default function NowPage() {

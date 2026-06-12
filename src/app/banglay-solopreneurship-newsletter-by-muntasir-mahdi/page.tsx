@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Newsletter",
   description:
     "Banglay Solopreneurship — a weekly newsletter on solopreneurship, marketing, and digital skills by Muntasir Mahdi. 78+ issues published.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/banglay-solopreneurship-newsletter-by-muntasir-mahdi",
+  },
 };
 
 interface NewsletterIssue {

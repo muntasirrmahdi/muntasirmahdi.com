@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Books",
   description:
     "All books by Muntasir Mahdi — marketing, sales, copywriting, and digital skills.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/books-by-muntasir-mahdi",
+  },
 };
 
 interface Book {
