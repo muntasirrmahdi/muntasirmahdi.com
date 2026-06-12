@@ -11,9 +11,9 @@ const subjectEnum = z.enum([
 ]);
 
 const bodySchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Invalid email address"),
-  phone: z.string().optional(),
   subject: subjectEnum,
   message: z.string().min(1, "Message is required"),
 });
@@ -39,19 +39,16 @@ function escapeHtml(str: string): string {
 async function sendBrevoEmail(
   data: z.infer<typeof bodySchema>
 ) {
-  const { name, email, phone, subject, message } = data;
+  const { firstName, lastName, email, subject, message } = data;
   const toEmail = EMAIL_ROUTES[subject];
   if (!toEmail) {
     throw new Error(`Unknown subject: ${subject}`);
   }
 
-  const safeName = escapeHtml(name);
+  const fullName = `${firstName} ${lastName}`;
+  const safeName = escapeHtml(fullName);
   const safeMessage = escapeHtml(message);
   const safeSubject = escapeHtml(subject);
-
-  const phoneRow = phone
-    ? `<tr><td style="padding:8px;font-weight:bold">Phone</td><td style="padding:8px">${escapeHtml(phone)}</td></tr>`
-    : "";
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
@@ -69,7 +66,6 @@ async function sendBrevoEmail(
         <table style="border-collapse:collapse;width:100%;max-width:600px">
           <tr><td style="padding:8px;font-weight:bold">Name</td><td style="padding:8px">${safeName}</td></tr>
           <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px">${escapeHtml(email)}</td></tr>
-          ${phoneRow}
           <tr><td style="padding:8px;font-weight:bold">Subject</td><td style="padding:8px">${safeSubject}</td></tr>
         </table>
         <hr style="margin:16px 0"/>

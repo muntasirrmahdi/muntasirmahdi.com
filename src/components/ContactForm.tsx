@@ -32,9 +32,9 @@ function LinkedinIcon({ size }: { size: number }) {
 }
 
 const contactSchema = z.object({
-  name: z.string().min(1, "Name is required"),
+  firstName: z.string().min(1, "First name is required"),
+  lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email"),
-  phone: z.string().optional(),
   subject: z.enum([
     "General Inquiry",
     "Speaking Engagement",
@@ -108,7 +108,6 @@ const socialLinks = [
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [selectedSubject, setSelectedSubject] = useState<ContactFormData["subject"]>("General Inquiry");
 
   const {
     register,
@@ -119,9 +118,9 @@ export function ContactForm() {
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
-      phone: "",
       subject: "General Inquiry",
       message: "",
     },
@@ -147,7 +146,6 @@ export function ContactForm() {
 
       setStatus("success");
       reset();
-      setSelectedSubject("General Inquiry");
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "Something went wrong");
@@ -157,16 +155,14 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6">
-          <div className="py-12 sm:py-16 text-center">
-            <CheckCircle size={40} className="text-accent mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">
-              Message sent successfully!
-            </h3>
-            <p className="text-sm text-muted max-w-md mx-auto">
-              Thank you for reaching out. I read every message personally and will get back to you as soon as possible.
-            </p>
-          </div>
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-16 text-center">
+          <CheckCircle size={40} className="text-accent mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-foreground mb-2">
+            Message sent successfully!
+          </h3>
+          <p className="text-sm text-muted max-w-md mx-auto">
+            Thank you for reaching out. I read every message personally and will get back to you as soon as possible.
+          </p>
         </div>
       </section>
     );
@@ -175,171 +171,131 @@ export function ContactForm() {
   const currentHint = subjectOptions.find((o) => o.value === currentSubject)?.hint ?? "";
 
   return (
-    <section className="border-t border-border">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
-          <div className="md:col-span-1">
-            <div className="flex items-center gap-2">
-              <Send size={18} className="text-accent shrink-0" />
-              <h2 className="font-semibold text-foreground">Send a Message</h2>
-            </div>
-          </div>
-
-          <div className="md:col-span-2">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-              {/* Subject dropdown — first */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  What is this regarding?
-                </label>
-                <select
-                  id="subject"
-                  {...register("subject", {
-                    onChange: (e) => setSelectedSubject(e.target.value as ContactFormData["subject"]),
-                  })}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-                >
-                  {subjectOptions.map((opt) => (
-                    <option key={opt.value} value={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
-                </select>
-                {currentHint && (
-                  <p className="mt-1.5 text-xs text-muted italic">{currentHint}</p>
-                )}
-                {errors.subject && (
-                  <p className="mt-1 text-xs text-red-500">{errors.subject.message}</p>
-                )}
-              </div>
-
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Name
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  {...register("name")}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
-                  placeholder="Your name"
-                />
-                {errors.name && (
-                  <p className="mt-1 text-xs text-red-500">{errors.name.message}</p>
-                )}
-              </div>
-
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  {...register("email")}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
-                  placeholder="your@email.com"
-                />
-                {errors.email && (
-                  <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
-                )}
-              </div>
-
-              {/* Phone — optional */}
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Phone <span className="text-muted">(optional)</span>
-                </label>
-                <input
-                  id="phone"
-                  type="tel"
-                  {...register("phone")}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
-                  placeholder="+1 (555) 123-4567"
-                />
-                {errors.phone && (
-                  <p className="mt-1 text-xs text-red-500">{errors.phone.message}</p>
-                )}
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  {...register("message")}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-y"
-                  placeholder="Your message..."
-                />
-                {errors.message && (
-                  <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
-                )}
-              </div>
-
-              {status === "error" && (
-                <div className="flex items-center gap-2 text-red-500 text-sm">
-                  <AlertCircle size={16} />
-                  <span>{errorMessage}</span>
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+    <>
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <div>
+              <select
+                id="subject"
+                {...register("subject")}
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
               >
-                {status === "sending" ? "Sending..." : "Send Message"}
-                <Send size={14} />
-              </button>
-            </form>
-
-            {/* Social section — below form */}
-            <div className="mt-10 pt-6 border-t border-border">
-              <p className="text-xs text-muted uppercase tracking-wider font-medium mb-3">
-                Connect on social media
-              </p>
-              <div className="flex items-center gap-4">
-                {socialLinks.map((link) => {
-                  const Icon = link.icon;
-                  return (
-                    <Link
-                      key={link.label}
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted hover:text-accent transition-colors"
-                      aria-label={link.label}
-                    >
-                      <Icon size={18} />
-                      <span className="hidden sm:inline">{link.label}</span>
-                    </Link>
-                  );
-                })}
-              </div>
+                {subjectOptions.map((opt) => (
+                  <option key={opt.value} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
+              {currentHint && (
+                <p className="mt-1.5 text-xs text-muted italic">{currentHint}</p>
+              )}
+              {errors.subject && (
+                <p className="mt-1 text-xs text-red-500">{errors.subject.message}</p>
+              )}
             </div>
+
+            <div>
+              <input
+                id="firstName"
+                type="text"
+                {...register("firstName")}
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                placeholder="First Name"
+              />
+              {errors.firstName && (
+                <p className="mt-1 text-xs text-red-500">{errors.firstName.message}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                id="lastName"
+                type="text"
+                {...register("lastName")}
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                placeholder="Last Name"
+              />
+              {errors.lastName && (
+                <p className="mt-1 text-xs text-red-500">{errors.lastName.message}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                id="email"
+                type="email"
+                {...register("email")}
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                placeholder="Email Address"
+              />
+              {errors.email && (
+                <p className="mt-1 text-xs text-red-500">{errors.email.message}</p>
+              )}
+            </div>
+
+            <div>
+              <textarea
+                id="message"
+                rows={5}
+                {...register("message")}
+                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-y"
+                placeholder="Your message..."
+              />
+              {errors.message && (
+                <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
+              )}
+            </div>
+
+            <p className="text-xs text-muted leading-relaxed">
+              By submitting, you agree that I may read and store your message and contact
+              information for the purpose of responding to your inquiry.
+            </p>
+
+            {status === "error" && (
+              <div className="flex items-center gap-2 text-red-500 text-sm">
+                <AlertCircle size={16} />
+                <span>{errorMessage}</span>
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+            >
+              {status === "sending" ? "Sending..." : "Send Message"}
+              <Send size={14} />
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
+          <p className="text-sm text-muted mb-6">
+            Or connect with me on&hellip;
+          </p>
+          <div className="flex items-center gap-6">
+            {socialLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors"
+                  aria-label={link.label}
+                >
+                  <Icon size={28} />
+                  <span className="text-sm text-foreground">{link.label}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
