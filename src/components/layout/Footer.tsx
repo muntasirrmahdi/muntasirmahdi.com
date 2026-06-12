@@ -16,14 +16,14 @@ export function Footer() {
             <Link
               key={item.href}
               href={item.href || "#"}
-              className="text-sm text-muted hover:text-foreground transition-colors"
+              className="min-h-[44px] inline-flex items-center text-sm text-muted hover:text-foreground transition-colors"
             >
               {item.label}
             </Link>
           ))}
           <button
             onClick={toggleTheme}
-            className="text-muted hover:text-foreground transition-colors"
+            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-muted hover:text-foreground transition-colors"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}

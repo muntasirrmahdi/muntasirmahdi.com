@@ -63,13 +63,13 @@ export function NewsletterForm() {
                   placeholder="your@email.com"
                   required
                   disabled={status === "sending"}
-                  className="w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50"
+                  className="w-full rounded-lg border border-border bg-background px-3 min-h-[44px] text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent disabled:opacity-50"
                 />
               </div>
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50 shrink-0"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 min-h-[44px] text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50 shrink-0"
               >
                 {status === "sending" ? "Sending..." : "Subscribe"}
                 <ArrowRight size={14} />

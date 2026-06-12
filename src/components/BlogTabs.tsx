@@ -89,7 +89,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
   return (
     <section>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16">
-        <div className="flex items-center justify-between mb-10">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-10">
           <div className="flex gap-8 border-b border-border">
             <button
               onClick={() => setActiveTab("thoughts")}
@@ -114,7 +114,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
           </div>
 
           {activeTab === "articles" && (
-            <div className="relative">
+            <div className="relative w-full sm:w-auto">
               <Search
                 size={16}
                 className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted"
@@ -124,7 +124,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search articles..."
-                className="w-60 rounded-md border border-border bg-background pl-10 pr-4 py-3 text-base text-foreground placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-accent"
+                className="w-full sm:w-60 rounded-md border border-border bg-background pl-10 pr-4 min-h-[44px] text-base text-foreground placeholder:text-muted focus:outline-none focus:ring-1 focus:ring-accent"
               />
             </div>
           )}
@@ -134,7 +134,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
           <div className="flex flex-wrap items-center gap-2 mb-6">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
+              className={`min-h-[44px] px-3 py-2.5 text-xs rounded-full border transition-colors ${
                 selectedCategory === null
                   ? "bg-accent text-accent-foreground border-accent"
                   : "border-border text-muted hover:text-foreground"
@@ -146,7 +146,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
               <button
                 key={cat._id}
                 onClick={() => setSelectedCategory(cat.title)}
-                className={`px-3 py-1.5 text-xs rounded-full border transition-colors ${
+                className={`min-h-[44px] px-3 py-2.5 text-xs rounded-full border transition-colors ${
                   selectedCategory === cat.title
                     ? "bg-accent text-accent-foreground border-accent"
                     : "border-border text-muted hover:text-foreground"
@@ -181,7 +181,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
           <div className="mt-8 text-center">
             <button
               onClick={() => setVisibleCount((prev) => prev + 10)}
-              className="px-6 py-2.5 text-sm border border-border rounded-md text-muted hover:text-foreground hover:border-accent transition-colors"
+              className="min-h-[44px] px-6 py-2.5 text-sm border border-border rounded-md text-muted hover:text-foreground hover:border-accent transition-colors"
             >
               Load More
             </button>

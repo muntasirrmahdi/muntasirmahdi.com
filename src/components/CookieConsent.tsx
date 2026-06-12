@@ -38,13 +38,13 @@ export function CookieConsent() {
         <div className="flex items-center gap-3 shrink-0">
           <button
             onClick={accept}
-            className="px-4 py-1.5 bg-accent text-accent-foreground rounded-md text-xs font-medium hover:opacity-90 transition-opacity"
+            className="min-h-[44px] px-4 py-2 bg-accent text-accent-foreground rounded-md text-xs font-medium hover:opacity-90 transition-opacity"
           >
             Got it
           </button>
           <button
             onClick={accept}
-            className="p-1 text-muted hover:text-foreground transition-colors"
+            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-muted hover:text-foreground transition-colors"
             aria-label="Dismiss"
           >
             <X size={14} />
