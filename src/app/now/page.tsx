@@ -19,7 +19,7 @@ export default function NowPage() {
       />
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <p className="text-sm text-muted leading-relaxed mb-2">
             (This is a{" "}
             <a

@@ -106,7 +106,7 @@ export default function Home() {
     <>
       <PersonStructuredData />
       {/* HERO — Large tagline + book cover + CTAs */}
-      <section className="mx-auto max-w-5xl px-4 sm:px-6 py-20 sm:py-28">
+      <section className="w-full px-4 sm:px-6 py-20 sm:py-28">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
           <div className="md:col-span-3">
             <p className="font-mono text-sm font-medium text-accent mb-4">
@@ -115,7 +115,7 @@ export default function Home() {
             <h1 className="text-3xl sm:text-4xl font-mono font-semibold tracking-tight text-foreground leading-tight">
               Mental tools, income systems, and applied AI.
             </h1>
-            <p className="mt-5 text-base text-muted leading-relaxed max-w-lg">
+            <p className="mt-5 text-base text-muted leading-relaxed">
               I write about how people think, learn, and build in Bangladesh.
               For nearly 7 years, I've mentored 30,000+ people to become
               solopreneurs through my books, articles, and courses.
@@ -156,7 +156,7 @@ export default function Home() {
 
       {/* HI, I'M MUNTASIR — Bio + Newsletter preview (2-column) */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Left: Bio + Stats */}
             <div>
@@ -253,7 +253,7 @@ export default function Home() {
 
       {/* EMAIL COURSE / CTA — 2-column: value prop + signup prompt */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl font-mono font-semibold text-foreground mb-4">
@@ -322,7 +322,7 @@ export default function Home() {
 
       {/* BOOKS */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="flex items-center justify-between mb-10">
             <div>
               <h2 className="text-2xl font-mono font-semibold text-foreground">
@@ -372,7 +372,7 @@ export default function Home() {
 
       {/* COMMUNITIES */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <h2 className="text-2xl font-mono font-semibold text-foreground mb-10">
             My Communities
           </h2>
@@ -409,7 +409,7 @@ export default function Home() {
 
       {/* LATEST ARTICLES */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="flex items-center justify-between mb-10">
             <div>
               <h2 className="text-2xl font-mono font-semibold text-foreground">

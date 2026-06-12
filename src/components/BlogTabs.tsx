@@ -88,7 +88,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
 
   return (
     <section>
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16">
+      <div className="w-full px-4 sm:px-6 py-12 sm:py-16">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-10">
           <div className="flex gap-8 border-b border-border">
             <button

@@ -59,8 +59,8 @@ const linkedinUrl =
 
 function AsteriskSeparator() {
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6">
-      <div className="mx-auto max-w-3xl">
+    <div className="w-full px-4 sm:px-6">
+      <div className="mx-auto">
         <div className="flex items-center justify-center gap-3 py-8 select-none">
           <span className="text-muted-foreground text-xs font-mono">*</span>
           <span className="text-muted-foreground text-xs font-mono">*</span>
@@ -76,8 +76,8 @@ function NewsletterArchive() {
 
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl">
+      <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
+        <div className="mx-auto">
           <div className="flex items-center gap-3 mb-10">
             <Newspaper size={20} className="text-accent" />
             <h2 className="text-lg font-mono font-semibold text-foreground">
@@ -127,11 +127,11 @@ export default function NewsletterPage() {
       />
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl">
-            <div className="space-y-5">
-                <h2 className="text-xl sm:text-2xl font-mono font-semibold text-foreground leading-snug">
-                  Banglay Solopreneurship
+      <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
+        <div className="mx-auto">
+          <div className="space-y-5">
+              <h2 className="text-xl sm:text-2xl font-mono font-semibold text-foreground leading-snug">
+                Banglay Solopreneurship
                 </h2>
                 <p className="italic text-sm text-muted leading-relaxed border-l-2 border-accent/50 pl-4">
                   Practical insights on building a solo business — marketing

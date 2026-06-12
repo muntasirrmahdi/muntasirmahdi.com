@@ -155,12 +155,12 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <section className="border-t border-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 text-center">
+        <div className="w-full px-4 sm:px-6 py-16 text-center">
           <CheckCircle size={40} className="text-accent mx-auto mb-4" />
           <h3 className="text-2xl sm:text-3xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-4">
             Message sent successfully!
           </h3>
-          <p className="text-sm text-muted max-w-md mx-auto">
+          <p className="text-sm text-muted">
             Thank you for reaching out. I read every message personally and will get back to you as soon as possible.
           </p>
         </div>
@@ -173,7 +173,7 @@ export function ContactForm() {
   return (
     <>
       <section className="border-t border-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16">
+        <div className="w-full px-4 sm:px-6 py-12 sm:py-16">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <div>
               <label htmlFor="subject" className="block text-sm font-medium text-muted mb-1.5">
@@ -288,7 +288,7 @@ export function ContactForm() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 text-center">
+        <div className="w-full px-4 sm:px-6 py-12 sm:py-16 text-center">
           <h2 className="text-2xl sm:text-3xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-8">
             Connect with me on&hellip;
           </h2>

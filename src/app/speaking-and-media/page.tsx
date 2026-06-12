@@ -44,7 +44,7 @@ export default function SpeakingPage() {
       />
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <h2 className="text-lg font-semibold text-foreground mb-4">
             Organizations I Have Worked With
           </h2>
@@ -55,7 +55,7 @@ export default function SpeakingPage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <blockquote className="border-l-2 border-accent pl-4 sm:pl-6">
             <div className="mb-2">
               <Quote size={20} className="text-accent/60" />
@@ -77,7 +77,7 @@ export default function SpeakingPage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <h2 className="text-lg font-semibold text-foreground mb-6">
             Podcast & Media
           </h2>
@@ -110,7 +110,7 @@ export default function SpeakingPage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <h2 className="text-lg font-semibold text-foreground mb-2">
             Interested in Having Me Speak at Your Event?
           </h2>
@@ -193,11 +193,11 @@ export default function SpeakingPage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16 sm:py-20 text-center">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20 text-center">
           <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-3">
             Want to Stay in Touch?
           </h2>
-          <p className="text-sm text-muted leading-relaxed max-w-lg mx-auto">
+          <p className="text-sm text-muted leading-relaxed">
             Join the Inner Circle newsletter for practical insights on digital
             marketing, solopreneurship, and building a business that lasts.
           </p>

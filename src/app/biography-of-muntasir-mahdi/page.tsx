@@ -111,7 +111,7 @@ export default function AboutPage() {
 
       {/* Hero / Intro */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
             <div className="md:col-span-2">
               <div className="aspect-[3/4] rounded-lg border border-border bg-card overflow-hidden">
@@ -150,8 +150,8 @@ export default function AboutPage() {
 
       {/* Philosophy: What I Write About */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="max-w-3xl mb-12">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
+          <div className="mb-12">
             <h2 className="text-2xl font-mono font-semibold text-foreground mb-4">
               What I Write About
             </h2>
@@ -188,7 +188,7 @@ export default function AboutPage() {
 
       {/* Achievements */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <h2 className="text-2xl font-mono font-semibold text-foreground mb-10">
             Achievements
           </h2>
@@ -228,7 +228,7 @@ export default function AboutPage() {
 
       {/* Interests */}
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <h2 className="text-2xl font-mono font-semibold text-foreground mb-10">
             Interests
           </h2>

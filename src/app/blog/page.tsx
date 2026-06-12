@@ -41,7 +41,7 @@ export default async function BlogPage() {
   return (
     <>
       <section className="border-b border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16">
+        <div className="w-full px-4 sm:px-6 py-12 sm:py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
             <div className="md:col-span-2 space-y-5">
               <h1 className="text-3xl sm:text-4xl font-mono font-semibold tracking-tight text-foreground">

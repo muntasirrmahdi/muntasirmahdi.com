@@ -108,7 +108,7 @@ export default async function PostPage({
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16">
+    <article className="w-full px-4 sm:px-6 py-12 sm:py-16">
       <BlogPostingStructuredData
         title={post.title}
         description={post.excerpt}

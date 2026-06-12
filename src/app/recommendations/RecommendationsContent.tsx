@@ -40,7 +40,7 @@ export function RecommendationsContent() {
   return (
     <>
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="flex flex-wrap gap-2 mb-10">
             {tabs.map((tab) => (
               <button

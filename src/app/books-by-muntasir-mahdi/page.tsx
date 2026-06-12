@@ -123,9 +123,9 @@ export default function BooksPage() {
       />
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="w-full max-w-sm mx-auto md:mx-0 aspect-[3/4] rounded-md bg-background border border-border overflow-hidden">
+            <div className="w-full mx-auto md:mx-0 aspect-[3/4] rounded-md bg-background border border-border overflow-hidden">
               <Image
                 src={`/images/books/${featured.coverImage}`}
                 alt={featured.title}
@@ -171,7 +171,7 @@ export default function BooksPage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
           <div className="mb-10">
             <h2 className="text-xl font-mono font-semibold text-foreground">
               All Books
@@ -233,12 +233,12 @@ export default function BooksPage() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
-          <div className="rounded-lg border border-border bg-card p-8 sm:p-12 text-center max-w-2xl mx-auto">
+        <div className="w-full px-4 sm:px-6 py-16 sm:py-20">
+          <div className="rounded-lg border border-border bg-card p-8 sm:p-12 text-center">
             <h2 className="text-xl font-mono font-semibold text-foreground mb-3">
               Get My Books
             </h2>
-            <p className="text-sm text-muted leading-relaxed max-w-md mx-auto">
+            <p className="text-sm text-muted leading-relaxed">
               All my books are available at bookstores across Bangladesh. Some
               titles are also available as ebooks.
             </p>

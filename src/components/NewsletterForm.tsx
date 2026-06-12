@@ -39,8 +39,8 @@ export function NewsletterForm() {
 
   return (
     <section className="border-t border-border">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16">
-        <div className="max-w-xl mx-auto text-center">
+      <div className="w-full px-4 sm:px-6 py-12 sm:py-16">
+        <div className="text-center">
           <p className="text-sm text-muted mb-6">
             Get notified about new articles, books, and resources.
           </p>
@@ -53,7 +53,7 @@ export function NewsletterForm() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="flex items-center gap-2 max-w-md mx-auto"
+              className="flex items-center gap-2"
             >
               <div className="flex-1 relative">
                 <input
