@@ -121,7 +121,7 @@ export function ContactForm() {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "General Inquiry",
+      subject: undefined as unknown as ContactFormData["subject"],
       message: "",
     },
   });
@@ -155,9 +155,9 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <section className="border-t border-border">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-16 text-center">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 text-center">
           <CheckCircle size={40} className="text-accent mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-foreground mb-2">
+          <h3 className="font-mono text-lg font-semibold text-foreground mb-2">
             Message sent successfully!
           </h3>
           <p className="text-sm text-muted max-w-md mx-auto">
@@ -173,7 +173,7 @@ export function ContactForm() {
   return (
     <>
       <section className="border-t border-border">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <div>
               <select
@@ -181,6 +181,9 @@ export function ContactForm() {
                 {...register("subject")}
                 className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
               >
+                <option value="" disabled>
+                  I&rsquo;d like to chat about&hellip;
+                </option>
                 {subjectOptions.map((opt) => (
                   <option key={opt.value} value={opt.value}>
                     {opt.label}
@@ -240,7 +243,7 @@ export function ContactForm() {
                 rows={5}
                 {...register("message")}
                 className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-y"
-                placeholder="Your message..."
+                placeholder="Message (remember, short &amp; sweet please)"
               />
               {errors.message && (
                 <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
@@ -264,7 +267,7 @@ export function ContactForm() {
               disabled={status === "sending"}
               className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
             >
-              {status === "sending" ? "Sending..." : "Send Message"}
+              {status === "sending" ? "Sending..." : "Submit"}
               <Send size={14} />
             </button>
           </form>
@@ -272,11 +275,11 @@ export function ContactForm() {
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 py-12 sm:py-16">
-          <p className="text-sm text-muted mb-6">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center">
+          <h2 className="font-mono text-sm text-muted mb-8">
             Or connect with me on&hellip;
-          </p>
-          <div className="flex items-center gap-6">
+          </h2>
+          <div className="flex items-center justify-center gap-10">
             {socialLinks.map((link) => {
               const Icon = link.icon;
               return (
@@ -285,11 +288,10 @@ export function ContactForm() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-muted hover:text-accent transition-colors"
+                  className="text-muted hover:text-accent transition-colors"
                   aria-label={link.label}
                 >
-                  <Icon size={28} />
-                  <span className="text-sm text-foreground">{link.label}</span>
+                  <Icon size={40} />
                 </Link>
               );
             })}
