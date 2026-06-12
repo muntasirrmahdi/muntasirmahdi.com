@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { sanityFetch, postBySlugQuery, allSlugsQuery, urlFor, type SanityPost } from "@/lib/sanity";
 import type { SanityImageSource } from "@sanity/image-url";
@@ -10,11 +11,14 @@ import { BlogPostingStructuredData } from "@/lib/structured-data";
 const ptComponents = {
   types: {
     image: ({ value }: { value: { asset: SanityImageSource; alt?: string; caption?: string } }) => (
-      <figure className="my-8">
-        <img
+      <figure className="my-8 relative w-full" style={{ aspectRatio: "16/9" }}>
+        <Image
           src={urlFor(value.asset).width(800).url()}
           alt={value.alt || ""}
-          className="rounded-lg w-full"
+          fill
+          className="rounded-lg object-cover"
+          sizes="(max-width: 768px) 100vw, 800px"
+          loading="lazy"
         />
         {value.caption && (
           <figcaption className="mt-2 text-center text-xs text-muted-foreground">
