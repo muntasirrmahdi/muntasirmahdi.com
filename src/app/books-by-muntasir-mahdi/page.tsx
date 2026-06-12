@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Minus } from "lucide-react";
 import Link from "next/link";
 import { PageHeader } from "@/components/ui";
 
@@ -10,7 +10,16 @@ export const metadata: Metadata = {
     "All books by Muntasir Mahdi — marketing, sales, copywriting, and digital skills.",
 };
 
-const books = [
+interface Book {
+  title: string;
+  description: string;
+  pages: number;
+  lang: string;
+  coverImage: string;
+  rokomariLink?: string;
+}
+
+const books: Book[] = [
   {
     title: "Brainfluence: The Psychology of Marketing",
     description:
@@ -18,6 +27,7 @@ const books = [
     pages: 150,
     lang: "Bangla",
     coverImage: "brainfluence_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/194739/brainfluence-the-psychology-of-marketing",
   },
   {
     title: "Content Marketing Mastery",
@@ -26,6 +36,7 @@ const books = [
     pages: 200,
     lang: "Bangla",
     coverImage: "content_marketing_mastery_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/449395/content-marketing-mastery",
   },
   {
     title: "Digital Marketing e Hatekhari",
@@ -34,6 +45,7 @@ const books = [
     pages: 180,
     lang: "Bangla",
     coverImage: "digital_marketing_e_hatekhari_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/193451/digital-marketing-e-hatekhari",
   },
   {
     title: "Copywriting: The Future of Content",
@@ -42,6 +54,7 @@ const books = [
     pages: 160,
     lang: "Bangla",
     coverImage: "copywriting_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/281248/copywriting-the-future-of-content",
   },
   {
     title: "Digital Product e Hatekhari",
@@ -50,6 +63,7 @@ const books = [
     pages: 190,
     lang: "Bangla",
     coverImage: "digital_product_e_hatekhari_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/378537/digital-producte-hatekhori",
   },
   {
     title: "Digital Sales: The Future of Sales",
@@ -58,6 +72,7 @@ const books = [
     pages: 170,
     lang: "Bangla",
     coverImage: "digital_sales_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/281330/digital-sales",
   },
   {
     title: "Client Hunting",
@@ -82,6 +97,7 @@ const books = [
     pages: 220,
     lang: "Bangla",
     coverImage: "facebook_atoz_muntasirmahdi.png",
+    rokomariLink: "https://www.rokomari.com/book/218019/facebook-a-to-z",
   },
   {
     title: "How to Sell Like Hell",
@@ -131,15 +147,21 @@ export default function BooksPage() {
                 <span className="w-1 h-1 rounded-full bg-border" />
                 <span>{featured.lang}</span>
               </div>
-              <Link
-                href="https://www.rokomari.com/search?q=Brainfluence"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
-              >
-                Buy on Rokomari
-                <ArrowRight size={16} />
-              </Link>
+              {featured.rokomariLink ? (
+                <Link
+                  href={featured.rokomariLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+                >
+                  Buy on Rokomari
+                  <ArrowRight size={16} />
+                </Link>
+              ) : (
+                <p className="mt-6 text-xs text-muted-foreground">
+                  Not available on Rokomari
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -184,22 +206,28 @@ export default function BooksPage() {
                     <span className="w-1 h-1 rounded-full bg-border" />
                     <span>{book.lang}</span>
                   </div>
-                  <Link
-                    href={`https://www.rokomari.com/search?q=${encodeURIComponent(book.title)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:opacity-80 transition-opacity"
-                  >
-                    Buy on Rokomari
-                    <ArrowRight size={12} />
-                  </Link>
+                  {book.rokomariLink ? (
+                    <Link
+                      href={book.rokomariLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:opacity-80 transition-opacity"
+                    >
+                      Buy on Rokomari
+                      <ArrowRight size={12} />
+                    </Link>
+                  ) : (
+                    <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                      <Minus size={12} />
+                      Not available
+                    </span>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
-
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
@@ -217,7 +245,7 @@ export default function BooksPage() {
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
             >
-              Buy on Rokomari
+              Browse All on Rokomari
               <ArrowRight size={16} />
             </Link>
           </div>

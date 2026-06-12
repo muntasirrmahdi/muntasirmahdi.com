@@ -97,7 +97,7 @@ export function Header() {
           <img
             src={isLight ? "/images/logo-black.png" : "/images/logo-white.png"}
             alt="Muntasir Mahdi"
-            className="h-10 w-auto transition-all"
+            className="h-12 w-auto transition-all"
           />
         </Link>
 
