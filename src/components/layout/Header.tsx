@@ -25,7 +25,9 @@ function NavLink({
       >
         <button
           onClick={() => mobile && setOpen(!open)}
-          className="flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors"
+          className={`flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors ${
+            mobile ? "min-h-[44px]" : ""
+          }`}
         >
           {item.label}
           <ChevronDown
@@ -49,7 +51,7 @@ function NavLink({
                 target={child.external ? "_blank" : undefined}
                 rel={child.external ? "noopener noreferrer" : undefined}
                 className={`flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors ${
-                  mobile ? "py-1" : "px-4 py-2"
+                  mobile ? "py-2.5 min-h-[44px]" : "px-4 py-2"
                 }`}
                 onClick={onNavClick}
               >
@@ -90,14 +92,35 @@ export function Header() {
     return () => observer.disconnect();
   }, []);
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
-        <Link href="/" className="flex items-center">
+      {/* Backdrop overlay when mobile menu is open */}
+      {menuOpen && (
+        <div
+          className="fixed inset-0 z-[-1] bg-black/30 md:hidden"
+          onClick={() => setMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <div className="mx-auto flex min-h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
+        <Link href="/" className="flex items-center shrink-0">
           <img
             src={isLight ? "/images/logo-black.png" : "/images/logo-white.png"}
             alt="Muntasir Mahdi"
-            className="h-[100px] w-auto transition-all"
+            className="h-12 sm:h-[100px] w-auto transition-all"
           />
         </Link>
 
@@ -108,7 +131,7 @@ export function Header() {
         </nav>
 
         <button
-          className="md:hidden p-2 text-muted hover:text-foreground"
+          className="md:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] text-muted hover:text-foreground"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
@@ -116,9 +139,14 @@ export function Header() {
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
-          <nav className="flex flex-col px-4 py-4 gap-3">
+      {/* Mobile nav panel with smooth transition */}
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="border-t border-border bg-background">
+          <nav className="flex flex-col px-4 py-4 gap-1">
             {navItems.map((item) => (
               <NavLink
                 key={item.label}
@@ -129,7 +157,7 @@ export function Header() {
             ))}
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }
