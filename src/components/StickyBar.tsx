@@ -28,7 +28,7 @@ export function StickyBar() {
         </div>
         <button
           onClick={dismiss}
-          className="shrink-0 p-1 hover:opacity-70 transition-opacity"
+          className="shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center hover:opacity-70 transition-opacity"
           aria-label="Dismiss"
         >
           <X size={16} />
