@@ -118,7 +118,7 @@ export function Header() {
         />
       )}
 
-      <div className="w-full flex min-h-14 items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[1110px] flex min-h-14 items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center shrink-0">
           <Image
             src={isLight ? "/images/logo-black.png" : "/images/logo-white.png"}

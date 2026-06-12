@@ -10,7 +10,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="w-full px-4 sm:px-6 py-12">
+      <div className="mx-auto w-full max-w-[1110px] px-4 sm:px-6 py-12">
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 items-center">
           {footerLinks.map((item) => (
             <Link
