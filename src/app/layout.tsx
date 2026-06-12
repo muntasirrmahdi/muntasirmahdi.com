@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Header, Footer, ThemeProvider } from "@/components/layout";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { StickyBar } from "@/components/StickyBar";
 import { CookieConsent } from "@/components/CookieConsent";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WebSiteStructuredData } from "@/lib/structured-data";
 import "./globals.css";
 
@@ -115,20 +115,7 @@ export default function RootLayout({
           <Footer />
           <CookieConsent />
         </ThemeProvider>
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
-              strategy="lazyOnload"
-            />
-            <Script id="google-analytics" strategy="lazyOnload">
-              {`window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');`}
-            </Script>
-          </>
-        )}
+        <GoogleAnalytics />
       </body>
     </html>
   );
