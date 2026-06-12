@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { MessageSquare, Mail, Mic, Handshake, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { PageHeader } from "@/components/ui";
 import { ContactForm } from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -16,10 +15,21 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHeader
-        title="Contact Me"
-        description="Thank you for wanting to reach out. I read every email personally and will do my best to get back to you. To make sure your message reaches the right place, please use the contact points below."
-      />
+      {/* Hero — replaces PageHeader */}
+      <section>
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
+          <p className="text-accent text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+            How can I help?
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3">
+            Contact Me
+          </h1>
+          <p className="text-muted text-base max-w-2xl">
+            Get in touch &mdash; I read every message personally and will do my
+            best to get back to you.
+          </p>
+        </div>
+      </section>
 
       {/* Advice & Questions */}
       <section className="border-t border-border">
@@ -50,7 +60,7 @@ export default function ContactPage() {
                     Books
                   </Link>
                   <span className="text-sm text-muted ml-1">
-                    — Deep dives into marketing, copywriting, and
+                    &mdash; Deep dives into marketing, copywriting, and
                     solopreneurship
                   </span>
                 </li>
@@ -65,7 +75,7 @@ export default function ContactPage() {
                     Banglay Solopreneurship Newsletter
                   </a>
                   <span className="text-sm text-muted ml-1">
-                    — Weekly LinkedIn newsletter in Bangla
+                    &mdash; Weekly LinkedIn newsletter in Bangla
                   </span>
                 </li>
                 <li>
@@ -79,7 +89,7 @@ export default function ContactPage() {
                     Learn with Muntasir
                   </a>
                   <span className="text-sm text-muted ml-1">
-                    — Courses and communities for serious learners
+                    &mdash; Courses and communities for serious learners
                   </span>
                 </li>
               </ul>
