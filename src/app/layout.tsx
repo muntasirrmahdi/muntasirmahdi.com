@@ -110,7 +110,7 @@ export default function RootLayout({
         <ThemeProvider>
           <StickyBar />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 mx-auto w-full max-w-[1110px] px-4 sm:px-6">{children}</main>
           <NewsletterForm />
           <Footer />
           <CookieConsent />
