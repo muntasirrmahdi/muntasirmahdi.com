@@ -20,8 +20,8 @@ export function StickyBar() {
 
   return (
     <div className="sticky top-0 z-50 bg-accent text-accent-foreground">
-      <div className="w-full px-4 py-2.5 flex items-center justify-between text-sm">
-        <div className="flex-1 text-center pr-4">
+      <div className="w-full px-4 py-2 min-h-[44px] flex items-center justify-between text-sm">
+        <div className="flex-1 flex items-center justify-center pr-4">
           <span className="text-accent-foreground">
             Under Development by Muntasir&apos;s SuperOC.
           </span>

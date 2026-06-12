@@ -42,7 +42,7 @@ function NavLink({
             className={
               mobile
                 ? "pl-4 mt-2 flex flex-col gap-2"
-                : "absolute left-0 top-full w-56 rounded-lg border border-border bg-card py-2 shadow-lg"
+                : "absolute right-0 top-full w-56 rounded-lg border border-border bg-card py-2 shadow-lg"
             }
           >
             {item.children.map((child) => (
