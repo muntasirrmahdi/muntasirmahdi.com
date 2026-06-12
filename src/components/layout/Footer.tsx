@@ -16,7 +16,7 @@ export function Footer() {
             <Link
               key={item.href}
               href={item.href || "#"}
-              className="min-h-[44px] inline-flex items-center text-sm text-muted hover:text-foreground transition-colors"
+              className="min-h-[44px] inline-flex items-center font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200"
             >
               {item.label}
             </Link>

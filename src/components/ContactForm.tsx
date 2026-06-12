@@ -301,7 +301,7 @@ export function ContactForm() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted hover:text-accent transition-colors"
+                  className="text-muted hover:text-accent hover:scale-110 transition-all duration-200"
                   aria-label={link.label}
                 >
                   <Icon size={40} />

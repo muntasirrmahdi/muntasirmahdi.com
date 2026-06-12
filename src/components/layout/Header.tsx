@@ -26,7 +26,7 @@ function NavLink({
       >
         <button
           onClick={() => mobile && setOpen(!open)}
-            className={`flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors ${
+            className={`flex items-center gap-1 font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
             mobile ? "min-h-[44px] py-2.5" : ""
           }`}
         >
@@ -51,7 +51,7 @@ function NavLink({
                 href={child.href || "#"}
                 target={child.external ? "_blank" : undefined}
                 rel={child.external ? "noopener noreferrer" : undefined}
-                className={`flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors ${
+                className={`flex items-center gap-1.5 font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
                   mobile ? "py-2.5 min-h-[44px]" : "px-4 py-2"
                 }`}
                 onClick={onNavClick}
@@ -71,7 +71,7 @@ function NavLink({
       href={item.href || "#"}
       target={item.external ? "_blank" : undefined}
       rel={item.external ? "noopener noreferrer" : undefined}
-      className={`inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors ${
+      className={`inline-flex items-center gap-1 font-mono text-base text-muted hover:text-foreground hover:scale-105 transition-all duration-200 ${
         mobile ? "min-h-[44px] py-2.5" : ""
       }`}
       onClick={onNavClick}
@@ -137,7 +137,7 @@ export function Header() {
         </nav>
 
         <button
-          className="md:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] text-muted hover:scale-105 hover:text-foreground transition-transform duration-200"
+          className="md:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] text-foreground hover:scale-105 transition-transform duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
