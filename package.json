@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "pages-deploy": "bash scripts/deploy-pages.sh",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

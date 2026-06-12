@@ -29,21 +29,21 @@ const highlights = [
 const topics = [
   {
     icon: BookOpen,
-    title: "Clear Thinking",
+    title: "Mental Tools",
     description:
-      "Most of our problems come from unclear thinking. Muntasir writes about how to think clearly, make better decisions, and cut through the noise that modern life throws at us.",
+      "Frameworks, principles, and models for better decisions. Muntasir writes about the mental tools that help you think clearly, cut through noise, and navigate complexity with confidence.",
   },
   {
     icon: GraduationCap,
-    title: "Better Learning",
+    title: "Income Systems",
     description:
-      "The education system teaches us to give the right answer, not to think. Muntasir explores how we can design better learning systems for ourselves and others.",
+      "Systematic income that compounds over time. Muntasir writes about revenue architecture, offer design, and building income streams that don't depend on constant hustle.",
   },
   {
     icon: Cpu,
-    title: "Systems & AI",
+    title: "Applied AI",
     description:
-      "How to build digital assets, use AI tools effectively, and create systems that work without you. Practical advice for the modern knowledge worker.",
+      "Practical AI for leverage -- not hype, not fear. Muntasir explores how to think alongside AI, build human+machine workflows, and use AI tools to multiply your output without losing your judgment.",
   },
 ];
 

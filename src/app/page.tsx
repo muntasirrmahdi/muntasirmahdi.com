@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -7,6 +8,20 @@ import {
   Mail,
   CheckCircle,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  openGraph: {
+    title: "Muntasir Mahdi - Author from Bangladesh",
+    description:
+      "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
+    url: "https://muntasirmahdi.com",
+  },
+  twitter: {
+    title: "Muntasir Mahdi - Author from Bangladesh",
+    description:
+      "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
+  },
+};
 
 const books = [
   {

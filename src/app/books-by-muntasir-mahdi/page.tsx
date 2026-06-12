@@ -114,10 +114,15 @@ export default function BooksPage() {
                 <span className="w-1 h-1 rounded-full bg-border" />
                 <span>{featured.lang}</span>
               </div>
-              <button className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity">
-                Learn More
+              <Link
+                href="https://www.rokomari.com/search?q=Brainfluence"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+              >
+                Buy on Rokomari
                 <ArrowRight size={16} />
-              </button>
+              </Link>
             </div>
           </div>
         </div>

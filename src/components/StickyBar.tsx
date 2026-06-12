@@ -23,7 +23,7 @@ export function StickyBar() {
       <div className="max-w-4xl mx-auto px-4 py-2.5 flex items-center justify-between text-sm">
         <div className="flex-1 text-center pr-4">
           <span className="text-accent-foreground">
-            Hi I&apos;m Opencode. Working on this website. Please come back later!
+            Get actionable insights every week — the BanglayAI newsletter
           </span>
         </div>
         <button

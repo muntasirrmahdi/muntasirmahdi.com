@@ -23,29 +23,31 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://muntasirmahdi.com"),
   title: {
-    default: "Muntasir Mahdi - Author & Educator",
+    default: "Muntasir Mahdi - Author from Bangladesh",
     template: "%s | Muntasir Mahdi",
   },
   description:
-    "Muntasir Mahdi is an author, educator, and solopreneur from Bangladesh. He writes about clear thinking, better learning systems, and building digital assets.",
+    "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
   keywords: [
     "Muntasir Mahdi",
     "author",
     "educator",
     "solopreneur",
     "Bangladesh",
-    "clear thinking",
-    "learning systems",
-    "digital assets",
+    "mental tools",
+    "income systems",
+    "applied AI",
+    "digital skills",
+    "marketing",
   ],
   authors: [{ name: "Muntasir Mahdi" }],
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     siteName: "Muntasir Mahdi",
-    title: "Muntasir Mahdi - Author & Educator",
+    title: "Muntasir Mahdi - Author from Bangladesh",
     description:
-      "Muntasir Mahdi is an author, educator, and solopreneur from Bangladesh. He writes about clear thinking, better learning systems, and building digital assets.",
+      "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
     images: [
       {
         url: "/og-default.png",
@@ -56,9 +58,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muntasir Mahdi - Author & Educator",
+    site: "@munrahmah",
+    creator: "@munrahmah",
+    title: "Muntasir Mahdi - Author from Bangladesh",
     description:
-      "Muntasir Mahdi is an author, educator, and solopreneur from Bangladesh. He writes about clear thinking, better learning systems, and building digital assets.",
+      "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
   },
   alternates: {
     types: {
