@@ -175,14 +175,14 @@ export function ContactForm() {
       <section className="border-t border-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-            <div>
+            <div className="text-center">
               <label htmlFor="subject" className="block text-sm font-medium text-muted mb-1.5">
                 I&rsquo;d like to chat about&hellip;
               </label>
               <select
                 id="subject"
                 {...register("subject")}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full max-w-md mx-auto rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground text-center focus:outline-none focus:ring-2 focus:ring-accent"
               >
                 <option value="" disabled>
                   I&rsquo;d like to chat about&hellip;
@@ -201,7 +201,7 @@ export function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="text-center">
               <label htmlFor="firstName" className="block text-sm font-medium text-muted mb-1.5">
                 First Name
               </label>
@@ -209,7 +209,7 @@ export function ContactForm() {
                 id="firstName"
                 type="text"
                 {...register("firstName")}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full max-w-md mx-auto rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground text-center placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
                 placeholder="First Name"
               />
               {errors.firstName && (
@@ -217,7 +217,7 @@ export function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="text-center">
               <label htmlFor="lastName" className="block text-sm font-medium text-muted mb-1.5">
                 Last Name
               </label>
@@ -225,7 +225,7 @@ export function ContactForm() {
                 id="lastName"
                 type="text"
                 {...register("lastName")}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full max-w-md mx-auto rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground text-center placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
                 placeholder="Last Name"
               />
               {errors.lastName && (
@@ -233,7 +233,7 @@ export function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="text-center">
               <label htmlFor="email" className="block text-sm font-medium text-muted mb-1.5">
                 Email Address
               </label>
@@ -241,7 +241,7 @@ export function ContactForm() {
                 id="email"
                 type="email"
                 {...register("email")}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full max-w-md mx-auto rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground text-center placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent"
                 placeholder="Email Address"
               />
               {errors.email && (
@@ -249,7 +249,7 @@ export function ContactForm() {
               )}
             </div>
 
-            <div>
+            <div className="text-center">
               <label htmlFor="message" className="block text-sm font-medium text-muted mb-1.5">
                 Message
               </label>
@@ -257,7 +257,7 @@ export function ContactForm() {
                 id="message"
                 rows={5}
                 {...register("message")}
-                className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-y"
+                className="w-full max-w-md mx-auto rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground text-center placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-y"
                 placeholder="Message"
               />
               {errors.message && (
@@ -265,7 +265,7 @@ export function ContactForm() {
               )}
             </div>
 
-            <p className="text-xs text-muted leading-relaxed">
+            <p className="text-xs text-muted leading-relaxed text-center">
               By submitting, you agree that I may read and store your message and contact
               information for the purpose of responding to your inquiry.
             </p>
@@ -293,8 +293,8 @@ export function ContactForm() {
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 text-center">
-          <h2 className="text-4xl sm:text-5xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-8">
-            Or connect with me on&hellip;
+          <h2 className="text-2xl sm:text-3xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-8">
+            Connect with me on&hellip;
           </h2>
           <div className="flex items-center justify-center gap-10">
             {socialLinks.map((link) => {
