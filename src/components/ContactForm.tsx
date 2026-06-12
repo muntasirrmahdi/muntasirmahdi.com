@@ -251,14 +251,14 @@ export function ContactForm() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-muted mb-1.5">
-                Message (remember, short &amp; sweet please)
+                Message
               </label>
               <textarea
                 id="message"
                 rows={5}
                 {...register("message")}
                 className="w-full rounded-lg border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent resize-y"
-                placeholder="Message (remember, short &amp; sweet please)"
+                placeholder="Message"
               />
               {errors.message && (
                 <p className="mt-1 text-xs text-red-500">{errors.message.message}</p>
@@ -277,21 +277,23 @@ export function ContactForm() {
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={status === "sending"}
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
-            >
-              {status === "sending" ? "Sending..." : "Submit"}
-              <Send size={14} />
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity disabled:opacity-50"
+              >
+                {status === "sending" ? "Sending..." : "Submit"}
+                <Send size={14} />
+              </button>
+            </div>
           </form>
         </div>
       </section>
 
       <section className="border-t border-border">
-        <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center">
-          <h2 className="text-3xl sm:text-4xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 py-12 sm:py-16 text-center">
+          <h2 className="text-4xl sm:text-5xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-8">
             Or connect with me on&hellip;
           </h2>
           <div className="flex items-center justify-center gap-10">
