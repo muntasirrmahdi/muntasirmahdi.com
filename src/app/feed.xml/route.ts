@@ -32,7 +32,7 @@ export async function GET() {
   <channel>
     <title>Muntasir Mahdi - Blog &amp; Thoughts</title>
     <link>${siteUrl}</link>
-    <description>Articles and thoughts on digital business, productivity, clear thinking, AI, and building systems from Muntasir Mahdi</description>
+    <description>Articles and thoughts on digital business, productivity, mental tools, income systems, and applied AI from Muntasir Mahdi</description>
     <language>en</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml"/>

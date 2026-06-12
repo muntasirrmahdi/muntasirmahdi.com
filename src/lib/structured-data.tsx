@@ -63,7 +63,7 @@ export function WebSiteStructuredData() {
     name: "Muntasir Mahdi",
     url: "https://muntasirmahdi.com",
     description:
-      "Articles and thoughts on digital business, productivity, clear thinking, AI, and building systems from Muntasir Mahdi.",
+      "Articles and thoughts on digital business, productivity, mental tools, income systems, and applied AI from Muntasir Mahdi.",
     potentialAction: {
       "@type": "SearchAction",
       target: "https://muntasirmahdi.com/blog?search={search_term_string}",

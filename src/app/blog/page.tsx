@@ -12,7 +12,7 @@ import { NewsletterCard } from "@/components/NewsletterCard";
 export const metadata: Metadata = {
   title: "Blogs & Thoughts | Muntasir Mahdi",
   description:
-    "Articles on digital business, productivity, clear thinking, learning & education systems, AI, online business skills, and personal branding.",
+    "Articles on digital business, productivity, mental tools, income systems, AI, online business skills, and personal branding.",
 };
 
 export const revalidate = 60;
@@ -45,7 +45,7 @@ export default async function BlogPage() {
                 Blogs &amp; Thoughts
               </h1>
               <p className="text-base text-muted leading-relaxed">
-                This page has my best articles on digital business, productivity, clear thinking, learning &amp; education systems, AI, online business skills, and personal branding.
+                This page has my best articles on digital business, productivity, mental tools, income systems, AI, online business skills, and personal branding.
               </p>
               <p className="text-base text-muted leading-relaxed">
                 The &lsquo;thoughts&rsquo; you see are RAW and unfiltered. They
@@ -53,7 +53,7 @@ export default async function BlogPage() {
                 have them.
               </p>
               <p className="text-base text-muted leading-relaxed">
-                Also, I share actionable lessons on thinking clearly, building
+                Also, I share actionable lessons on mental tools, building
                 systems, writing without AI, and how to survive and grow in this
                 AI era.
               </p>

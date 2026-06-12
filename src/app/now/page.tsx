@@ -41,7 +41,7 @@ export default function NowPage() {
               <div className="space-y-3 text-sm text-muted leading-relaxed">
                 <p>
                   I've been writing more consistently this year. Mostly about
-                  clear thinking, learning systems, and how solopreneurs can use
+                  mental tools, income systems, and how solopreneurs can use
                   AI tools without getting distracted by the hype. The central
                   question I keep coming back to: what actually moves the needle
                   for a one-person business?

@@ -108,7 +108,7 @@ export default function Home() {
               Author & Educator
             </p>
             <h1 className="text-3xl sm:text-4xl font-mono font-semibold tracking-tight text-foreground leading-tight">
-              Clear thinking, better learning, building digital assets.
+              Mental tools, income systems, and applied AI.
             </h1>
             <p className="mt-5 text-base text-muted leading-relaxed max-w-lg">
               I write about how people think, learn, and build in Bangladesh.
@@ -161,8 +161,8 @@ export default function Home() {
               <p className="text-sm text-muted leading-relaxed mb-4">
                 For nearly 7 years, I've mentored 30,000+ people on how to make
                 money online and become solopreneurs through my books, articles,
-                and courses. I write in English about clear thinking, learning
-                systems, and building digital assets.
+                and courses. I write about mental tools, income systems, and
+                applied AI.
               </p>
               <p className="text-sm text-muted leading-relaxed mb-6">
                 I believe better thinking builds better lives, and better
@@ -256,7 +256,7 @@ export default function Home() {
               </h2>
               <p className="text-sm text-muted leading-relaxed mb-6">
                 Join 77+ subscribers who get my weekly newsletter on
-                solopreneurship, clear thinking, and digital skills. No spam.
+                solopreneurship, mental tools, and digital skills. No spam.
                 Unsubscribe anytime.
               </p>
               <ul className="space-y-3">
@@ -266,8 +266,8 @@ export default function Home() {
                     className="text-accent shrink-0 mt-0.5"
                   />
                   <span className="text-sm text-muted">
-                    Practical frameworks for clearer thinking and better
-                    learning
+                    Practical frameworks for mental tools and income
+                    systems
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

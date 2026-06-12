@@ -16,7 +16,7 @@ import { PageHeader } from "@/components/ui";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Muntasir Mahdi is an author and educator from Bangladesh. He writes about clear thinking, better learning, and building systems.",
+    "Muntasir Mahdi is an author and educator from Bangladesh. He writes about mental tools, income systems, and applied AI.",
 };
 
 const highlights = [
@@ -145,7 +145,7 @@ export default function AboutPage() {
             </h2>
             <p className="text-sm text-muted leading-relaxed">
               I write for the person who wants to build a better life through
-              clearer thinking, smarter learning, and practical systems. My work
+              mental tools, income systems, and applied AI. My work
               sits at the intersection of psychology, technology, and education
               \u2014 because real progress happens when all three come together.
             </p>
