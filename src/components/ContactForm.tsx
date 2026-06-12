@@ -157,7 +157,7 @@ export function ContactForm() {
       <section className="border-t border-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 text-center">
           <CheckCircle size={40} className="text-accent mx-auto mb-4" />
-          <h3 className="font-mono text-lg font-semibold text-foreground mb-2">
+          <h3 className="text-2xl sm:text-3xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-4">
             Message sent successfully!
           </h3>
           <p className="text-sm text-muted max-w-md mx-auto">
@@ -176,6 +176,9 @@ export function ContactForm() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <div>
+              <label htmlFor="subject" className="block text-sm font-medium text-muted mb-1.5">
+                I&rsquo;d like to chat about&hellip;
+              </label>
               <select
                 id="subject"
                 {...register("subject")}
@@ -199,6 +202,9 @@ export function ContactForm() {
             </div>
 
             <div>
+              <label htmlFor="firstName" className="block text-sm font-medium text-muted mb-1.5">
+                First Name
+              </label>
               <input
                 id="firstName"
                 type="text"
@@ -212,6 +218,9 @@ export function ContactForm() {
             </div>
 
             <div>
+              <label htmlFor="lastName" className="block text-sm font-medium text-muted mb-1.5">
+                Last Name
+              </label>
               <input
                 id="lastName"
                 type="text"
@@ -225,6 +234,9 @@ export function ContactForm() {
             </div>
 
             <div>
+              <label htmlFor="email" className="block text-sm font-medium text-muted mb-1.5">
+                Email Address
+              </label>
               <input
                 id="email"
                 type="email"
@@ -238,6 +250,9 @@ export function ContactForm() {
             </div>
 
             <div>
+              <label htmlFor="message" className="block text-sm font-medium text-muted mb-1.5">
+                Message (remember, short &amp; sweet please)
+              </label>
               <textarea
                 id="message"
                 rows={5}
@@ -276,7 +291,7 @@ export function ContactForm() {
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 py-12 sm:py-16 text-center">
-          <h2 className="font-mono text-sm text-muted mb-8">
+          <h2 className="text-3xl sm:text-4xl font-mono font-semibold tracking-tight text-foreground leading-tight mb-8">
             Or connect with me on&hellip;
           </h2>
           <div className="flex items-center justify-center gap-10">
