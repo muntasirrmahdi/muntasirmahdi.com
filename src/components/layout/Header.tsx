@@ -25,8 +25,8 @@ function NavLink({
       >
         <button
           onClick={() => mobile && setOpen(!open)}
-          className={`flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors ${
-            mobile ? "min-h-[44px]" : ""
+            className={`flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors ${
+            mobile ? "min-h-[44px] py-2.5" : ""
           }`}
         >
           {item.label}
@@ -70,7 +70,9 @@ function NavLink({
       href={item.href || "#"}
       target={item.external ? "_blank" : undefined}
       rel={item.external ? "noopener noreferrer" : undefined}
-      className="inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors"
+      className={`inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors ${
+        mobile ? "min-h-[44px] py-2.5" : ""
+      }`}
       onClick={onNavClick}
     >
       {item.label}

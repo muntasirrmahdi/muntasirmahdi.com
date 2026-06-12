@@ -7,6 +7,15 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/pt5maea8/production/**",
+      },
+    ],
+  },
   async headers() {
     return [
       {
