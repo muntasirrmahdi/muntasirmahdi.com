@@ -2,24 +2,29 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 const subjectEnum = z.enum([
-  "Advice & Questions",
-  "Customer Service",
-  "Speaking & Media",
-  "Partnerships & Collaboration",
+  "General Inquiry",
+  "Speaking Engagement",
+  "Partnership",
+  "Press/Media",
+  "Feedback",
+  "Other",
 ]);
 
 const bodySchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address"),
+  phone: z.string().optional(),
   subject: subjectEnum,
   message: z.string().min(1, "Message is required"),
 });
 
 const EMAIL_ROUTES: Record<string, string> = {
-  "Advice & Questions": "hello@muntasirmahdi.com",
-  "Customer Service": "hello@muntasirmahdi.com",
-  "Speaking & Media": "muntasirrahmanmahdi@gmail.com",
-  "Partnerships & Collaboration": "muntasirrahmanmahdi@gmail.com",
+  "General Inquiry": "hello@muntasirmahdi.com",
+  "Speaking Engagement": "muntasirrahmanmahdi@gmail.com",
+  "Partnership": "muntasirrahmanmahdi@gmail.com",
+  "Press/Media": "muntasirrahmanmahdi@gmail.com",
+  "Feedback": "hello@muntasirmahdi.com",
+  "Other": "hello@muntasirmahdi.com",
 };
 
 function escapeHtml(str: string): string {
@@ -31,12 +36,10 @@ function escapeHtml(str: string): string {
     .replace(/'/g, "&#039;");
 }
 
-async function sendBrevoEmail({
-  name,
-  email,
-  subject,
-  message,
-}: z.infer<typeof bodySchema>) {
+async function sendBrevoEmail(
+  data: z.infer<typeof bodySchema>
+) {
+  const { name, email, phone, subject, message } = data;
   const toEmail = EMAIL_ROUTES[subject];
   if (!toEmail) {
     throw new Error(`Unknown subject: ${subject}`);
@@ -45,6 +48,10 @@ async function sendBrevoEmail({
   const safeName = escapeHtml(name);
   const safeMessage = escapeHtml(message);
   const safeSubject = escapeHtml(subject);
+
+  const phoneRow = phone
+    ? `<tr><td style="padding:8px;font-weight:bold">Phone</td><td style="padding:8px">${escapeHtml(phone)}</td></tr>`
+    : "";
 
   const res = await fetch("https://api.brevo.com/v3/smtp/email", {
     method: "POST",
@@ -62,6 +69,7 @@ async function sendBrevoEmail({
         <table style="border-collapse:collapse;width:100%;max-width:600px">
           <tr><td style="padding:8px;font-weight:bold">Name</td><td style="padding:8px">${safeName}</td></tr>
           <tr><td style="padding:8px;font-weight:bold">Email</td><td style="padding:8px">${escapeHtml(email)}</td></tr>
+          ${phoneRow}
           <tr><td style="padding:8px;font-weight:bold">Subject</td><td style="padding:8px">${safeSubject}</td></tr>
         </table>
         <hr style="margin:16px 0"/>
