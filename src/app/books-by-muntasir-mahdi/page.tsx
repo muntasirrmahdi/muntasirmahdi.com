@@ -184,6 +184,15 @@ export default function BooksPage() {
                     <span className="w-1 h-1 rounded-full bg-border" />
                     <span>{book.lang}</span>
                   </div>
+                  <Link
+                    href={`https://www.rokomari.com/search?q=${encodeURIComponent(book.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:opacity-80 transition-opacity"
+                  >
+                    Buy on Rokomari
+                    <ArrowRight size={12} />
+                  </Link>
                 </div>
               </div>
             ))}
@@ -203,10 +212,12 @@ export default function BooksPage() {
               titles are also available as ebooks.
             </p>
             <Link
-              href="/contact"
+              href="https://www.rokomari.com/book/author/75773/muntasir-mahadi"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
             >
-              Contact for Details
+              Buy on Rokomari
               <ArrowRight size={16} />
             </Link>
           </div>

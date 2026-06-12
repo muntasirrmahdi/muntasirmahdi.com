@@ -95,9 +95,9 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
         <Link href="/" className="flex items-center">
           <img
-            src="/images/logo-white.png"
+            src={isLight ? "/images/logo-black.png" : "/images/logo-white.png"}
             alt="Muntasir Mahdi"
-            className={`h-7 w-auto transition-all ${isLight ? "invert" : ""}`}
+            className="h-10 w-auto transition-all"
           />
         </Link>
 

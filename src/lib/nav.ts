@@ -7,7 +7,7 @@ export interface NavItem {
 
 export const navItems: NavItem[] = [
   { label: "About", href: "/biography-of-muntasir-mahdi" },
-  { label: "Books", href: "https://www.rokomari.com/book/author/75773/muntasir-mahadi", external: true },
+  { label: "Books", href: "/books-by-muntasir-mahdi" },
   { label: "Blogs & Thoughts", href: "/blog" },
   {
     label: "Newsletters",
