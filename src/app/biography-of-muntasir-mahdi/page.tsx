@@ -13,11 +13,15 @@ import {
   Star,
 } from "lucide-react";
 import { PageHeader } from "@/components/ui";
+import { PersonStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "Muntasir Mahdi is an author and educator from Bangladesh. He writes about mental tools, income systems, and applied AI.",
+  alternates: {
+    canonical: "https://muntasirmahdi.com/biography-of-muntasir-mahdi",
+  },
 };
 
 const highlights = [
@@ -99,6 +103,7 @@ const interests = [
 export default function AboutPage() {
   return (
     <>
+      <PersonStructuredData />
       <PageHeader
         title="About Muntasir Mahdi"
         description="Author, educator, and solopreneur from Sylhet, Bangladesh."

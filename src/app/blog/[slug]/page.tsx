@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PortableText } from "@portabletext/react";
 import { sanityFetch, postBySlugQuery, allSlugsQuery, urlFor, type SanityPost } from "@/lib/sanity";
 import type { SanityImageSource } from "@sanity/image-url";
+import { BlogPostingStructuredData } from "@/lib/structured-data";
 
 const ptComponents = {
   types: {
@@ -80,6 +81,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://muntasirmahdi.com/blog/${slug}`,
+    },
   };
 }
 
@@ -101,6 +105,12 @@ export default async function PostPage({
 
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 py-12 sm:py-16">
+      <BlogPostingStructuredData
+        title={post.title}
+        description={post.excerpt}
+        publishedAt={post.publishedAt}
+        url={`https://muntasirmahdi.com/blog/${slug}`}
+      />
       <Link
         href="/blog"
         className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors mb-8"

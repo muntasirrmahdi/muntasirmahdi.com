@@ -65,6 +65,7 @@ export const metadata: Metadata = {
       "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
   },
   alternates: {
+    canonical: "https://muntasirmahdi.com",
     types: {
       "application/rss+xml": "https://muntasirmahdi.com/feed.xml",
     },

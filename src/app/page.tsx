@@ -8,6 +8,7 @@ import {
   Mail,
   CheckCircle,
 } from "lucide-react";
+import { PersonStructuredData } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   openGraph: {
@@ -20,6 +21,9 @@ export const metadata: Metadata = {
     title: "Muntasir Mahdi - Author from Bangladesh",
     description:
       "Muntasir Mahdi writes about mental tools, income systems, and applied AI. 10+ books. 30,000+ students. Author from Bangladesh.",
+  },
+  alternates: {
+    canonical: "https://muntasirmahdi.com",
   },
 };
 
@@ -100,6 +104,7 @@ const blogPosts = [
 export default function Home() {
   return (
     <>
+      <PersonStructuredData />
       {/* HERO — Large tagline + book cover + CTAs */}
       <section className="mx-auto max-w-5xl px-4 sm:px-6 py-20 sm:py-28">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
