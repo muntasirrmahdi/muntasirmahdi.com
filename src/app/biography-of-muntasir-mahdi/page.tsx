@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   BookOpen,
   GraduationCap,
@@ -108,8 +109,14 @@ export default function AboutPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
             <div className="md:col-span-2">
-              <div className="aspect-[3/4] rounded-lg border border-border bg-card flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">Photo</span>
+              <div className="aspect-[3/4] rounded-lg border border-border bg-card overflow-hidden">
+                <Image
+                  src="/images/author.png"
+                  alt="Muntasir Mahdi"
+                  width={800}
+                  height={800}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <div className="md:col-span-3 flex flex-col justify-center">

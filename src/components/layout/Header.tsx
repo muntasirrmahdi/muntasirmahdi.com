@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { navItems, type NavItem } from "@/lib/nav";
 
@@ -66,25 +66,39 @@ function NavLink({
   return (
     <Link
       href={item.href || "#"}
-      className="text-sm text-muted hover:text-foreground transition-colors"
+      target={item.external ? "_blank" : undefined}
+      rel={item.external ? "noopener noreferrer" : undefined}
+      className="inline-flex items-center gap-1 text-sm text-muted hover:text-foreground transition-colors"
       onClick={onNavClick}
     >
       {item.label}
+      {item.external && <ExternalLink size={12} />}
     </Link>
   );
 }
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLight, setIsLight] = useState(false);
+
+  useEffect(() => {
+    setIsLight(document.documentElement.classList.contains("light"));
+    const observer = new MutationObserver(() => {
+      setIsLight(document.documentElement.classList.contains("light"));
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
-        <Link
-          href="/"
-          className="font-mono text-sm font-medium tracking-tight text-foreground hover:text-accent transition-colors"
-        >
-          Muntasir Mahdi
+        <Link href="/" className="flex items-center">
+          <img
+            src="/images/logo-white.png"
+            alt="Muntasir Mahdi"
+            className={`h-7 w-auto transition-all ${isLight ? "invert" : ""}`}
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

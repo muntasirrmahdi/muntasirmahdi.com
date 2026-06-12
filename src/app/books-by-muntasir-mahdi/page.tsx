@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { BookOpen, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { PageHeader } from "@/components/ui";
 
@@ -16,6 +17,7 @@ const books = [
       "How psychological marketing techniques influence our brain — the hacks, tips, and tricks that shape every buying decision.",
     pages: 150,
     lang: "Bangla",
+    coverImage: "brainfluence_muntasirmahdi.png",
   },
   {
     title: "Content Marketing Mastery",
@@ -23,6 +25,7 @@ const books = [
       "How to use content for marketing — finding audience needs, building strategy, and publishing in the right places.",
     pages: 200,
     lang: "Bangla",
+    coverImage: "content_marketing_mastery_muntasirmahdi.png",
   },
   {
     title: "Digital Marketing e Hatekhari",
@@ -30,6 +33,7 @@ const books = [
       "A beginner's guide to digital marketing told through stories — for anyone starting a career in this space.",
     pages: 180,
     lang: "Bangla",
+    coverImage: "digital_marketing_e_hatekhari_muntasirmahdi.png",
   },
   {
     title: "Copywriting: The Future of Content",
@@ -37,6 +41,7 @@ const books = [
       "The magical world of copywriting and why it's the most valuable skill in the content economy.",
     pages: 160,
     lang: "Bangla",
+    coverImage: "copywriting_muntasirmahdi.png",
   },
   {
     title: "Digital Product e Hatekhari",
@@ -44,6 +49,7 @@ const books = [
       "How digital products took a complete beginner from zero to crore in 5 years — a step-by-step story.",
     pages: 190,
     lang: "Bangla",
+    coverImage: "digital_product_e_hatekhari_muntasirmahdi.png",
   },
   {
     title: "Digital Sales: The Future of Sales",
@@ -51,6 +57,7 @@ const books = [
       "The first book on digital sales in Bangladesh — written from 10 years of hands-on sales experience.",
     pages: 170,
     lang: "Bangla",
+    coverImage: "digital_sales_muntasirmahdi.png",
   },
   {
     title: "Client Hunting",
@@ -58,6 +65,7 @@ const books = [
       "From buyer persona to client communication — an effective guide to mastering client hunting.",
     pages: 140,
     lang: "Bangla",
+    coverImage: "client_hunting_muntasirmahdi.png",
   },
   {
     title: "Social Media Marketing Handbook",
@@ -65,6 +73,7 @@ const books = [
       "Formulas, strategies, and frameworks to take your social media presence from ordinary to extraordinary.",
     pages: 210,
     lang: "Bangla",
+    coverImage: "social_media_marketing_handbook_muntasirmahdi.png",
   },
   {
     title: "Facebook A to Z: Marketing, Sales and Branding",
@@ -72,6 +81,7 @@ const books = [
       "A complete guide to using Facebook the right way for your business — marketing, sales, and branding.",
     pages: 220,
     lang: "Bangla",
+    coverImage: "facebook_atoz_muntasirmahdi.png",
   },
   {
     title: "How to Sell Like Hell",
@@ -79,6 +89,7 @@ const books = [
       "Powerful sales tactics, sales psychology, and a money-making mindset — compact and actionable.",
     pages: 130,
     lang: "Bangla",
+    coverImage: "how_to_sell_like_hell_muntasirmahdi.png",
   },
 ];
 
@@ -95,8 +106,14 @@ export default function BooksPage() {
       <section className="border-t border-border">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-16 sm:py-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <div className="w-full max-w-sm mx-auto md:mx-0 aspect-[3/4] rounded-md bg-background border border-border flex items-center justify-center">
-              <BookOpen size={48} className="text-muted-foreground" />
+            <div className="w-full max-w-sm mx-auto md:mx-0 aspect-[3/4] rounded-md bg-background border border-border overflow-hidden">
+              <Image
+                src={`/images/books/${featured.coverImage}`}
+                alt={featured.title}
+                width={600}
+                height={800}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             <div>
@@ -145,8 +162,14 @@ export default function BooksPage() {
                 key={book.title}
                 className="rounded-lg border border-border bg-card p-5 flex gap-5"
               >
-                <div className="w-24 shrink-0 aspect-[3/4] rounded-md bg-background border border-border flex items-center justify-center">
-                  <BookOpen size={24} className="text-muted-foreground" />
+                <div className="w-24 shrink-0 aspect-[3/4] rounded-md bg-background border border-border overflow-hidden">
+                  <Image
+                    src={`/images/books/${book.coverImage}`}
+                    alt={book.title}
+                    width={600}
+                    height={800}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 <div className="flex flex-col min-w-0">
