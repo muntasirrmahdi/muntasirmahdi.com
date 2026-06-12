@@ -228,7 +228,7 @@ export default function Home() {
                 <p className="text-xs text-muted-foreground font-mono mb-2">
                   Latest Issue
                 </p>
-                <p className="text-sm text-foreground leading-relaxed mb-3">
+                <p className="text-base text-foreground leading-relaxed mb-3">
                   My weekly newsletter on solopreneurship, marketing, and
                   digital skills — now 77+ issues strong.
                 </p>

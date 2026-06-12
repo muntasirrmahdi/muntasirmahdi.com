@@ -103,7 +103,7 @@ function NewsletterArchive() {
                       <span className="shrink-0 text-xs font-mono text-muted-foreground w-16 tabular-nums">
                         {issue.date}
                       </span>
-                      <span className="text-sm text-foreground group-hover:text-accent transition-colors">
+                      <span className="text-base text-foreground group-hover:text-accent transition-colors">
                         {issue.title}
                       </span>
                     </a>
