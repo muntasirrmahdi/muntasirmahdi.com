@@ -66,7 +66,7 @@ export function NewsletterCard() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="inline-flex items-center justify-center gap-1.5 rounded-md bg-accent px-3 min-h-[44px] text-sm font-medium text-white hover:opacity-90 transition-opacity shrink-0 disabled:opacity-50"
+            className="inline-flex items-center justify-center gap-1.5 rounded-md bg-accent px-3 min-h-[44px] text-sm font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200 shrink-0 disabled:opacity-50"
           >
             {status === "sending" ? "Sending..." : "Subscribe"}
             <ArrowRight size={14} />

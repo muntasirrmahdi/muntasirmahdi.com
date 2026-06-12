@@ -137,7 +137,7 @@ export function Header() {
         </nav>
 
         <button
-          className="md:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] text-muted hover:text-foreground"
+          className="md:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] text-muted hover:scale-105 hover:text-foreground transition-transform duration-200"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >

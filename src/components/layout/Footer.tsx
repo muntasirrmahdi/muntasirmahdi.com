@@ -23,7 +23,7 @@ export function Footer() {
           ))}
           <button
             onClick={toggleTheme}
-            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-muted hover:text-foreground transition-colors"
+            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-muted hover:scale-105 hover:text-foreground transition-all duration-200"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}

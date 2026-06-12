@@ -183,7 +183,7 @@ export default function SpeakingPage() {
           <div className="mt-8">
             <Link
               href="mailto:hello@muntasirmahdi.com"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-black hover:bg-accent/90 transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-black hover:scale-105 hover:bg-accent/90 transition-all duration-200"
             >
               <Mail size={16} />
               Send an Invite
@@ -204,7 +204,7 @@ export default function SpeakingPage() {
           <div className="mt-6">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-black hover:bg-accent/90 transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-black hover:scale-105 hover:bg-accent/90 transition-all duration-200"
             >
               Get in Touch
               <ArrowRight size={16} />

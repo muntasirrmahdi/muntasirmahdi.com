@@ -123,14 +123,14 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/biography-of-muntasir-mahdi"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200"
               >
                 Start Here
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href="/banglay-solopreneurship-newsletter-by-muntasir-mahdi"
-                className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:bg-card transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:scale-105 hover:bg-card transition-all duration-200"
               >
                 Read the Newsletter
                 <Newspaper size={16} />
@@ -240,7 +240,7 @@ export default function Home() {
 
                 <Link
                   href="/banglay-solopreneurship-newsletter-by-muntasir-mahdi"
-                  className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-xs font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-xs font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200"
                 >
                   Read the Latest Issue
                   <ArrowRight size={14} />
@@ -310,7 +310,7 @@ export default function Home() {
               </p>
               <Link
                 href="/banglay-solopreneurship-newsletter-by-muntasir-mahdi"
-                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200"
               >
                 Subscribe Free
                 <ArrowRight size={16} />

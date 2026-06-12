@@ -61,19 +61,19 @@ export function CookieConsent() {
             <div className="flex items-center gap-2 shrink-0 flex-wrap">
               <button
                 onClick={() => setShowPreferences(true)}
-                className="text-xs text-muted hover:text-foreground underline underline-offset-2 transition-colors min-h-[44px] px-2"
+                className="text-xs text-muted hover:scale-105 hover:text-foreground underline underline-offset-2 transition-all duration-200 min-h-[44px] px-2"
               >
                 Preferences
               </button>
               <button
                 onClick={handleRejectAll}
-                className="min-h-[44px] px-4 py-2 text-xs font-medium text-foreground border border-border rounded-md hover:bg-accent/10 transition-colors"
+                className="min-h-[44px] px-4 py-2 text-xs font-medium text-foreground border border-border rounded-md hover:scale-105 hover:bg-accent/10 transition-all duration-200"
               >
                 Reject All
               </button>
               <button
                 onClick={handleAcceptAll}
-                className="min-h-[44px] px-4 py-2 bg-accent text-accent-foreground rounded-md text-xs font-medium hover:opacity-90 transition-opacity"
+                className="min-h-[44px] px-4 py-2 bg-accent text-accent-foreground rounded-md text-xs font-medium hover:scale-105 hover:opacity-90 transition-all duration-200"
               >
                 Accept All
               </button>

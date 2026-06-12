@@ -93,7 +93,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
           <div className="flex gap-8 border-b border-border">
             <button
               onClick={() => setActiveTab("thoughts")}
-              className={`pb-4 text-xl font-mono font-semibold border-b-2 transition-colors ${
+              className={`pb-4 text-xl font-mono font-semibold border-b-2 hover:scale-105 transition-all duration-200 ${
                 activeTab === "thoughts"
                   ? "border-accent text-foreground"
                   : "border-transparent text-muted hover:text-foreground"
@@ -103,7 +103,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
             </button>
             <button
               onClick={() => setActiveTab("articles")}
-              className={`pb-4 text-xl font-mono font-semibold border-b-2 transition-colors ${
+              className={`pb-4 text-xl font-mono font-semibold border-b-2 hover:scale-105 transition-all duration-200 ${
                 activeTab === "articles"
                   ? "border-accent text-foreground"
                   : "border-transparent text-muted hover:text-foreground"
@@ -134,7 +134,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
           <div className="flex flex-wrap items-center gap-2 mb-6">
             <button
               onClick={() => setSelectedCategory(null)}
-              className={`min-h-[44px] px-3 py-2.5 text-xs rounded-full border transition-colors ${
+              className={`min-h-[44px] px-3 py-2.5 text-xs rounded-full border hover:scale-105 transition-all duration-200 ${
                 selectedCategory === null
                   ? "bg-accent text-accent-foreground border-accent"
                   : "border-border text-muted hover:text-foreground"
@@ -146,7 +146,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
               <button
                 key={cat._id}
                 onClick={() => setSelectedCategory(cat.title)}
-                className={`min-h-[44px] px-3 py-2.5 text-xs rounded-full border transition-colors ${
+className={`min-h-[44px] px-3 py-2.5 text-xs rounded-full border hover:scale-105 transition-all duration-200 ${
                   selectedCategory === cat.title
                     ? "bg-accent text-accent-foreground border-accent"
                     : "border-border text-muted hover:text-foreground"
@@ -181,7 +181,7 @@ export function BlogTabs({ thoughts, articles, categories }: BlogTabsProps) {
           <div className="mt-8 text-center">
             <button
               onClick={() => setVisibleCount((prev) => prev + 10)}
-              className="min-h-[44px] px-6 py-2.5 text-sm border border-border rounded-md text-muted hover:text-foreground hover:border-accent transition-colors"
+              className="min-h-[44px] px-6 py-2.5 text-sm border border-border rounded-md text-muted hover:scale-105 hover:text-foreground hover:border-accent transition-all duration-200"
             >
               Load More
             </button>

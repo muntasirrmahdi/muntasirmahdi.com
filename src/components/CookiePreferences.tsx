@@ -61,7 +61,7 @@ export function CookiePreferences({
           <h2 className="text-lg font-semibold">Cookie Preferences</h2>
           <button
             onClick={onClose}
-            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-muted hover:text-foreground transition-colors rounded-md"
+            className="min-w-[44px] min-h-[44px] inline-flex items-center justify-center text-muted hover:scale-105 hover:text-foreground transition-all duration-200 rounded-md"
             aria-label="Close preferences"
           >
             <X size={16} />
@@ -90,7 +90,7 @@ export function CookiePreferences({
                 }
                 disabled={cat.alwaysOn}
                 onClick={() => toggle(cat.key)}
-                className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:cursor-not-allowed ${
+                className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent hover:scale-105 transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 disabled:cursor-not-allowed ${
                   cat.alwaysOn || preferences[cat.key as keyof typeof preferences]
                     ? "bg-accent"
                     : "bg-muted"
@@ -112,7 +112,7 @@ export function CookiePreferences({
         <div className="mt-6">
           <button
             onClick={() => onSave(preferences)}
-            className="w-full min-h-[44px] px-4 py-2 bg-accent text-accent-foreground rounded-md text-sm font-medium hover:opacity-90 transition-opacity"
+            className="w-full min-h-[44px] px-4 py-2 bg-accent text-accent-foreground rounded-md text-sm font-medium hover:scale-105 hover:opacity-90 transition-all duration-200"
           >
             Save Preferences
           </button>

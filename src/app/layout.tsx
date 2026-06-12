@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Merriweather, JetBrains_Mono, Hind_Siliguri } from "next/font/google";
 import { Header, Footer, ThemeProvider } from "@/components/layout";
 import { NewsletterForm } from "@/components/NewsletterForm";
 import { StickyBar } from "@/components/StickyBar";
@@ -8,10 +8,18 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WebSiteStructuredData } from "@/lib/structured-data";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const merriweather = Merriweather({
+  variable: "--font-merriweather",
   subsets: ["latin"],
   display: "swap",
+  weight: ["300", "400", "700", "900"],
+});
+
+const hindSiliguri = Hind_Siliguri({
+  variable: "--font-bangla",
+  subsets: ["bengali"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -97,7 +105,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${merriweather.variable} ${jetbrainsMono.variable} ${hindSiliguri.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

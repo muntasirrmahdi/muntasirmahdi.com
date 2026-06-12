@@ -120,7 +120,7 @@ function NewsletterArchive() {
 
 export default function NewsletterPage() {
   return (
-    <>
+    <div lang="bn">
       <PageHeader
         title="Banglay Solopreneurship"
         description="A weekly newsletter on solopreneurship, marketing, and digital skills — written by Muntasir Mahdi. 78+ issues published on LinkedIn."
@@ -148,7 +148,7 @@ export default function NewsletterPage() {
                   href={linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+                  className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200"
                 >
                   Read on LinkedIn
                   <ExternalLink size={16} />
@@ -163,6 +163,6 @@ export default function NewsletterPage() {
       <AsteriskSeparator />
 
       <NewsletterArchive />
-    </>
+    </div>
   );
 }

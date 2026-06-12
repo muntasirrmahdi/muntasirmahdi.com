@@ -155,7 +155,7 @@ export default function BooksPage() {
                   href={featured.rokomariLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200"
                 >
                   Buy on Rokomari
                   <ArrowRight size={16} />
@@ -214,7 +214,7 @@ export default function BooksPage() {
                       href={book.rokomariLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:opacity-80 transition-opacity"
+                      className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:scale-105 hover:opacity-80 transition-all duration-200"
                     >
                       Buy on Rokomari
                       <ArrowRight size={12} />
@@ -246,7 +246,7 @@ export default function BooksPage() {
               href="https://www.rokomari.com/book/author/75773/muntasir-mahadi"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90 transition-opacity"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:scale-105 hover:opacity-90 transition-all duration-200"
             >
               Browse All on Rokomari
               <ArrowRight size={16} />

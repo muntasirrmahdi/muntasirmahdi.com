@@ -12,13 +12,13 @@ export default function NotFound() {
         <div className="flex gap-4 justify-center">
           <Link
             href="/"
-            className="px-6 py-2.5 bg-accent text-accent-foreground rounded-md font-medium hover:opacity-90 transition-opacity"
+            className="px-6 py-2.5 bg-accent text-accent-foreground rounded-md font-medium hover:scale-105 hover:opacity-90 transition-all duration-200"
           >
             Go Home
           </Link>
           <Link
             href="/blog"
-            className="px-6 py-2.5 border border-border text-foreground rounded-md font-medium hover:border-accent transition-colors"
+            className="px-6 py-2.5 border border-border text-foreground rounded-md font-medium hover:scale-105 hover:border-accent transition-all duration-200"
           >
             Browse Blog
           </Link>
